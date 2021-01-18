@@ -8,14 +8,21 @@ $font-header: "Poppins", sans-serif;
 // $font-header: "Proxima-Nova-Thin", sans-serif;
 $para-text: "Montserrat", Helvetica, sans-serif;
 
-$bck-color: #191919;
+// $bck-color: #191919;
+$bck-color: #274047;
+// $bck-color: #0e0240;
 // $bck-color: #2e3047;
 // $bck-color: #0d0d0d;
 // $bck-color: #252c3f;
 $prime-color: #252c3f;
-$second-color: #d38d8c;
-$third-color: #5e74a2;
-$fourth-color: #768db6;
+// $second-color: #d38d8c;
+$second-color: #daddd1;
+// $second-color: #bd0fe1;
+$third-color: #8da9a6;
+// $third-color: #5e74a2;
+// $fourth-color: #768db6;
+$fourth-color: #fe958d;
+$fifth-color: #849cac;
 
 // $second-color: #9c795c;
 // $second-color: #b0976d;
@@ -65,7 +72,7 @@ $para-color: #e4e5e7;
   font-size: 1.3em;
   // font-weight: 300;
   padding: 0;
-  color: #e4e5e7;
+  // color: #e4e5e7;
 }
 
 %a-links {
@@ -85,7 +92,7 @@ $para-color: #e4e5e7;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   text-align: left;
-  color: #8995a9;
+  // color: #8995a9;
 }
 %head-one {
   font-family: $font-header;
@@ -97,21 +104,21 @@ $para-color: #e4e5e7;
   font-family: $font-header;
   font-size: 1.4em;
   font-weight: 300;
-  color: #fff;
+  // color: #fff;
 }
 
 %para-cont {
   font-family: $para-text;
   font-size: 1.4em;
   font-weight: 300;
-  color: #faf1f1;
+  // color: #faf1f1;
 }
 
 %descri-cont {
   font-family: $font-header;
   font-size: 0.9em;
   font-weight: 300;
-  color: #202020;
+  // color: #202020;
 }
 
 %descri-cont-2 {
@@ -134,7 +141,7 @@ $para-color: #e4e5e7;
   font-family: $font-header;
   font-size: 0.72em;
   font-weight: 300;
-  color: #fff;
+  // color: #fff;
   // filter:brightness(100%)
 }
 
@@ -142,7 +149,7 @@ $para-color: #e4e5e7;
   font-family: $font-header;
   font-size: 1.4em;
   font-weight: 300;
-  color: #e49f9e;
+  // color: #e49f9e;
 }
 
 /* Basic styles */
@@ -216,9 +223,9 @@ main {
 /* #Cursor
 ===================================================================================================== */
 
-// span {
-//   @extend %sect-head-link;
-// }
+span {
+  @extend %sect-head-link;
+}
 
 // a {
 //   text-decoration: none;
@@ -253,6 +260,8 @@ p {
 q {
   @extend %qoutes;
 }
+
+// --------------------- Scroll Animation Class --------------- //
 
 .text-fade-left {
   opacity: 0;
@@ -669,7 +678,7 @@ h1 {
 }
 
 .name-logo a {
-  color: $second-color;
+  color: $third-color;
   // text-transform: uppercase;
   text-decoration: none;
 }
@@ -681,6 +690,7 @@ h1 {
   text-align: right;
   position: relative;
   top: 0%;
+  color: $third-color;
 }
 .hero-filter {
   grid-column: 1;
@@ -688,7 +698,7 @@ h1 {
   z-index: 1;
   // background-color: #26292f;
   background-color: $bck-color;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 ////////////////////////////
@@ -769,7 +779,7 @@ h1 {
   padding-top: 0.5em;
   text-align: left;
   // line-height: 1em;
-  color: $second-color;
+  color: $fourth-color;
   font-weight: 500;
 }
 
@@ -818,7 +828,7 @@ h1 {
   @extend %p-cont;
   margin-top: 0.5em;
   padding: 0;
-  color: $third-color;
+  color: $fourth-color;
   text-decoration: none;
   font-weight: 600;
 }
@@ -971,7 +981,7 @@ h1 {
   width: 100%;
   height: 100vh;
   z-index: -1;
-  opacity: 0.54;
+  opacity: 0.9;
 }
 
 // position: fixed;
@@ -1026,7 +1036,7 @@ h1 {
 .abt-filter {
   grid-column: 1;
   grid-row: 1;
-  background-color: $second-color;
+  background-color: $fourth-color;
   opacity: 0.9;
   height: 100%;
   z-index: 1;
@@ -1034,9 +1044,9 @@ h1 {
 
 .abt-link h4 {
   text-align: center;
-  color: $prime-color;
+  color: $bck-color;
   padding-bottom: 10px;
-  border-bottom: 3px solid $prime-color;
+  border-bottom: 3px solid $bck-color;
 }
 
 .abt-overlay {
@@ -1048,7 +1058,7 @@ h1 {
   z-index: 201;
   top: 0;
   left: 0;
-  background-color: rgb(8, 10, 14);
+  background-color: $bck-color;
   overflow-x: hidden;
   transition: 0.5s;
 }
@@ -1256,9 +1266,9 @@ label {
 }
 
 .serv-link h4 {
-  color: $second-color;
+  color: $fourth-color;
   // padding-bottom: 10px;
-  border-bottom: 3px solid $second-color;
+  border-bottom: 3px solid $fourth-color;
 }
 
 // .serv-link span {
@@ -1279,7 +1289,7 @@ label {
   top: 0;
   left: 0;
   // background-color: rgb(0, 0, 0);
-  background-color: rgba(25, 20, 37, 0.98);
+  background-color: #849cac;
   overflow-x: hidden;
   transition: 0.5s;
   display: grid;
@@ -1486,7 +1496,7 @@ serv-over-cont:nth-child(3) {
 .wrk-filter {
   grid-column: 1;
   grid-row: 1;
-  background-color: $second-color;
+  background-color: $fourth-color;
   opacity: 0.9;
   height: 100%;
   z-index: 2;
