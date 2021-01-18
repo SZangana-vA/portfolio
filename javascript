@@ -35,7 +35,7 @@ function toggleNavigation(event) {
 
 document.addEventListener('DOMContentLoaded',function(event){
   // array with texts to type in typewriter
-  var dataText = [ "frontend developer.", "designer.", "creator.", "father.","soccer fan.","punching bag for my kid's.","man who misses Mathew.","guy not afriad to admit my love for another man :)."];
+  var dataText = [ "frontend developer.", "designer.", "creator.", "father.","soccer fan.","punching bag for my kid's.","man who misses Mathew."];
   
   // type one text in the typwriter
   // keeps calling itself until the text is finished
