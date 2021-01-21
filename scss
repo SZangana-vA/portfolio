@@ -1073,6 +1073,17 @@ h1 {
   grid-template-rows: repeat(5, auto);
 }
 
+.abt-over-cnt-head {
+  // grid-column: 1;
+  // grid-row: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.5em;
+  padding: 0;
+  z-index: 305;
+}
+
 .abt-prof-card {
   grid-column: 1;
   grid-row: 1;
@@ -1089,7 +1100,7 @@ h1 {
 }
 
 .abt-ovly-grd {
-  height: 110vh;
+  height: 90vh;
   grid-column: 1;
   grid-row: 1 / span 2;
   align-self: end;
