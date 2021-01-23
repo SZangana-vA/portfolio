@@ -9,26 +9,35 @@ $font-header: "Poppins", sans-serif;
 $para-text: "Montserrat", Helvetica, sans-serif;
 
 // $bck-color: #191919;
-$bck-color: #274047;
+// $bck-color: #274047;
+$bck-color: #2e3135;
+// $bck-color: #04050d;
+$prime-color: #c922f3;
+$second-color: #4187e6;
+$third-color: #6d3ce1;
 // $bck-color: #0e0240;
 // $bck-color: #2e3047;
 // $bck-color: #0d0d0d;
 // $bck-color: #252c3f;
-$prime-color: #252c3f;
+// $prime-color: #252c3f;
 // $second-color: #d38d8c;
-$second-color: #daddd1;
+
 // $second-color: #bd0fe1;
-$third-color: #8da9a6;
+// $third-color: #8da9a6;
+
 // $third-color: #5e74a2;
-// $fourth-color: #768db6;
-$fourth-color: #fe958d;
+// $prime-color: #768db6;
+// $prime-color: #f4d9be;
+// $prime-color: #fe958d;
+
 $fifth-color: #849cac;
 
 // $second-color: #9c795c;
 // $second-color: #b0976d;
 // $second-color: #3bba9c;
 // $second-color: #71291d;
-$text-color: #faf1f1;
+$text-color: #94949c;
+// $text-color: #faf1f1;
 $font-color: #c0baba;
 $para-color: #e4e5e7;
 
@@ -651,6 +660,8 @@ h1 {
 }
 
 .hero-content {
+  box-shadow: 18px 18px 16px 0 rgba(209, 207, 207, 0.1) inset,
+    -8px -8px 12px 0 rgba(0, 0, 0, 0.25) inset;
   height: 100vh;
   grid-column: 1;
   grid-row: 1 / span 2;
@@ -779,7 +790,7 @@ h1 {
   padding-top: 0.5em;
   text-align: left;
   // line-height: 1em;
-  color: $fourth-color;
+  color: $prime-color;
   font-weight: 500;
 }
 
@@ -798,7 +809,7 @@ h1 {
   transform: translate(0, -100%);
 }
 .job-tytl {
-  color: #cd989d;
+  color: $text-color;
   display: flex;
   flex-direction: column;
   line-height: 1.8em;
@@ -810,7 +821,7 @@ h1 {
 }
 
 .type-text {
-  color: $second-color;
+  color: $prime-color;
 }
 
 // span {
@@ -828,7 +839,7 @@ h1 {
   @extend %p-cont;
   margin-top: 0.5em;
   padding: 0;
-  color: $fourth-color;
+  color: $second-color;
   text-decoration: none;
   font-weight: 600;
 }
@@ -965,11 +976,16 @@ h1 {
   }
 }
 
-// .hero-filter {
-//   background-color: #272c3f;
-//   height: 100vh;
-//   opacity: 0.3;
-// }
+.hero-filter {
+  // background-color: #272c3f;
+  // height: 100vh;
+  // opacity: 0.6;
+  background: rgba(46, 49, 53, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  // border-radius: 10px;
+}
 
 #myVideo {
   object-fit: cover;
@@ -1036,7 +1052,7 @@ h1 {
 .abt-filter {
   grid-column: 1;
   grid-row: 1;
-  background-color: $fourth-color;
+  background-color: $prime-color;
   opacity: 0.9;
   height: 100%;
   z-index: 1;
@@ -1284,9 +1300,9 @@ label {
 }
 
 .serv-link h4 {
-  color: $fourth-color;
+  color: $prime-color;
   // padding-bottom: 10px;
-  border-bottom: 3px solid $fourth-color;
+  border-bottom: 3px solid $prime-color;
 }
 
 // .serv-link span {
@@ -1307,7 +1323,7 @@ label {
   top: 0;
   left: 0;
   // background-color: rgb(0, 0, 0);
-  background-color: $prime-color;
+  background-color: $text-color;
   overflow-x: hidden;
   transition: 0.5s;
   display: grid;
@@ -1514,7 +1530,7 @@ serv-over-cont:nth-child(3) {
 .wrk-filter {
   grid-column: 1;
   grid-row: 1;
-  background-color: $fourth-color;
+  background-color: $prime-color;
   opacity: 0.9;
   height: 100%;
   z-index: 2;
