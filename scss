@@ -39,28 +39,25 @@ $fifth-color: #849cac;
 $text-color: #94949c;
 // $text-color: #faf1f1;
 $font-color: #c0baba;
-$para-color: #e4e5e7;
+$para-color: #ece0c7;
 
 %sect-head-link {
   font-family: $font-header;
   font-size: 2.43em;
-  // font-weight: 400;
-  // text-transform: uppercase;
-  // letter-spacing: 0.2em;
+
   text-align: center;
-  // color: #141925;
 }
 
 %h2-fonts {
   font-family: $font-header;
-  // font-size: 2.7em;
-  font-weight: 100;
+  font-size: 1.5em;
+  // font-weight: 100;
   // color: #cd989d;
 }
 
 %h3-fonts {
   font-family: $font-header;
-  font-size: 1.7em;
+  font-size: 2.43em;
 }
 
 %h4-fonts {
@@ -236,6 +233,29 @@ span {
   @extend %sect-head-link;
 }
 
+.span-title {
+  @extend %sect-head-link;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba($color: $second-color, $alpha: 0.81);
+  text-transform: uppercase;
+}
+
+.h3-title {
+  @extend %h3-fonts;
+  // text-transform: capitalize;
+  text-transform: uppercase;
+  color: $prime-color;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.p-cont {
+  font-size: 1.5em;
+  color: $para-color;
+  font-weight: 300;
+}
+
 // a {
 //   text-decoration: none;
 //   @extend %a-links;
@@ -244,31 +264,31 @@ span {
 // h1 {
 // }
 
-h2 {
+h2-card {
   @extend %h2-fonts;
 }
 
-h3 {
-  @extend %h3-fonts;
-  padding: 0;
-  margin: 0;
-}
+// h3 {
+//   @extend %h3-fonts;
+//   padding: 0;
+//   margin: 0;
+// }
 
-h4 {
-  @extend %h4-fonts;
-}
+// h4 {
+//   @extend %h4-fonts;
+// }
 
-h5 {
-  @extend %h5-fonts;
-}
+// h5 {
+//   @extend %h5-fonts;
+// }
 
-p {
-  @extend %p-cont;
-}
+// p {
+//   @extend %p-cont;
+// }
 
-q {
-  @extend %qoutes;
-}
+// q {
+//   @extend %qoutes;
+// }
 
 // --------------------- Scroll Animation Class --------------- //
 
@@ -837,6 +857,7 @@ h1 {
 
 .type-text {
   color: $prime-color;
+  line-height: 1.2em;
 }
 
 // span {
@@ -1024,12 +1045,12 @@ h1 {
 //  //////////////////////////////////// MAIN SECTION //////////////////////////////////
 
 .card-filter {
-  background: rgba(46, 49, 53, 0.6);
+  background: rgba(46, 49, 53, 0.9);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(6.5px);
-  -webkit-backdrop-filter: blur(6.5px);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
 
-  border: 6px solid rgba(255, 255, 255, 0.18);
+  border: 9px solid rgba(255, 255, 255, 0.18);
   // border-radius: 10px;
   height: 100%;
   z-index: 1;
@@ -1090,12 +1111,14 @@ h1 {
   z-index: 1;
 }
 
-.abt-link h4 {
+.abt-link {
   text-align: center;
-  font-weight: 300;
-  color: $second-color;
-  text-shadow: -2px 2px #000;
-  padding-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba($color: $second-color, $alpha: 0.81);
+  text-transform: uppercase;
+  // text-shadow: -2px 2px #000;
+  // padding-bottom: 10px;
   // border-bottom: 3px solid $second-color;
 }
 
@@ -1113,16 +1136,6 @@ h1 {
   transition: 0.5s;
 }
 
-.abt-overlay-content {
-  position: relative;
-
-  width: 100%;
-  text-align: left;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(5, auto);
-}
-
 .abt-over-cnt-head {
   // grid-column: 1;
   // grid-row: 1;
@@ -1134,41 +1147,79 @@ h1 {
   z-index: 305;
 }
 
-.abt-prof-card {
-  grid-column: 1;
-  grid-row: 1;
+.abt-overlay-content {
+  padding: 0 9%;
+  position: relative;
+
+  width: 100%;
+  text-align: left;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(5, auto);
+}
+
+.grt-hed {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.grt-hed h3 {
+  font-weight: 300;
+  font-size: 2em;
+  color: $para-color;
+  line-height: 1.5em;
+}
+
+.abt-prof-card {
+  grid-column: 1;
+  grid-row: 2;
+  // display: grid;
+  // grid-template-columns: auto;
+  // grid-template-rows: auto;
+}
+
+.abt-prof-card-img {
+  // padding: 9% 0;
+  grid-column: 1;
+  grid-row: 1;
   background-image: url("..//img/hero-test-1.jpg");
   background-color: #cccccc;
-  height: 500px;
+  height: 45vh;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
 
-.abt-ovly-grd {
-  height: 90vh;
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  align-self: end;
-  background: linear-gradient(
-    to top,
-    rgba(8, 10, 14, 1),
-    rgba(8, 10, 14, 0.36),
-    rgba(38, 39, 42, 0.32)
-  );
-  z-index: 203;
-}
+// .abt-ovly-grd {
+//   height: 90vh;
+//   grid-column: 1;
+//   grid-row: 1 / span 2;
+//   align-self: end;
+//   background: linear-gradient(
+//     to top,
+//     rgba(8, 10, 14, 1),
+//     rgba(8, 10, 14, 0.36),
+//     rgba(38, 39, 42, 0.32)
+//   );
+//   z-index: 203;
+// }
 
 .abt-ovly-text {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1;
   align-self: end;
   z-index: 204;
-  padding: 0 3%;
+  padding: 0;
+  // background-image: linear-gradient(
+  //   to bottom,
+  //   rgba(0, 0, 0, 0),
+  //   rgba(18, 19, 21, 1)
+  // );
+}
+
+.abt-ovly-text h2 {
 }
 
 .abt-ovly-text p {
@@ -1267,14 +1318,15 @@ label {
   bottom: 0;
 }
 .skill {
-  padding: 0 3%;
+  padding: 0;
 }
 .skill p {
   margin-top: 0;
 }
 
 .skill li {
-  color: #e4e5e7;
+  font-size: 1.5em;
+  color: $fifth-color;
   text-decoration: none;
   list-style-type: none;
   text-align: left;
@@ -1337,9 +1389,9 @@ label {
   z-index: 3;
 }
 
-.serv-link h4 {
-  color: $prime-color;
-  text-shadow: -2px 2px #000;
+.serv-link {
+  color: rgba($color: $prime-color, $alpha: 0.81);
+
   // padding-bottom: 10px;
   // border-bottom: 3px solid $prime-color;
 }
@@ -1514,6 +1566,7 @@ serv-over-cont:nth-child(3) {
 }
 
 .over-info-txt p {
+  font-size: 1.5em;
   color: $text-color;
   font-weight: 600;
 }
@@ -1600,18 +1653,19 @@ serv-over-cont:nth-child(3) {
   z-index: 3;
 }
 
-.wrk-link h4 {
-  color: $second-color;
-  // text-decoration: underline;
-  text-shadow: -2px 2px #000;
-  padding-bottom: 10px;
+.wrk-link {
+  text-align: center;
+
   // border-bottom: 3px solid $second-color;
   z-index: 3;
 }
 
 .wrk-link p {
-  color: #fff;
-  text-shadow: -2px 2px #000;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba($color: $second-color, $alpha: 0.81);
+  text-transform: uppercase;
   // padding-bottom: 10px;
   // border-bottom: 3px solid $second-color;
   z-index: 3;
