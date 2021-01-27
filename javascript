@@ -165,14 +165,48 @@ function servCloseNav() {
 
 
 // work
-
+// prj 1
 function workOpenNav() {
   document.getElementById("workNav").style.width = "100%";
+
 }
 
 function workCloseNav() {
   document.getElementById("workNav").style.width = "0%";
 }
+
+// prj 2
+function workTwoOpenNav() {
+  document.getElementById("prjTwo").style.width = "100%";
+
+}
+
+function workTwoCloseNav() {
+  document.getElementById("prjTwo").style.width = "0%";
+}
+
+// prj 3
+function workThreeOpenNav() {
+  document.getElementById("prjThree").style.width = "100%";
+
+}
+
+function workThreeCloseNav() {
+  document.getElementById("prjThree").style.width = "0%";
+}
+
+// document.getElementById("workNav").addEventListener('click', workOpenNav);
+
+// function workOpenNav() {
+//   document.getElementById("workNav").style.width = "100%";
+
+
+// }
+
+// function workCloseNav() {
+//   document.getElementById("workNav").style.width = "0%";
+// }
+
 
 
 
