@@ -11,7 +11,7 @@ $para-text: "Montserrat", Helvetica, sans-serif;
 // $bck-color: #191919;
 // $bck-color: #274047;
 $bck-color: #2e3135;
-// $bck-color: #04050d;
+$drk-color-2: #24282c;
 $second-color: #c922f3;
 $prime-color: #4187e6;
 $third-color: #6d3ce1;
@@ -167,9 +167,9 @@ $para-color: #ece0c7;
   box-sizing: border-box;
 }
 
-:root {
-  --bg-color: #e9abac;
-}
+// :root {
+//   --bg-color: #e9abac;
+// }
 html {
   scroll-behavior: smooth;
 }
@@ -180,7 +180,7 @@ body {
   height: 100%;
   padding: 0;
   cursor: crosshair;
-  background-color: $bck-color;
+  background-color: $drk-color-2;
   font-family: "Poppins", sans-serif;
 
   // font-size: 1rem;
@@ -231,6 +231,7 @@ main {
 
 span {
   @extend %sect-head-link;
+  color: rgba($color: $prime-color, $alpha: 0.81);
 }
 
 .span-title {
@@ -245,7 +246,7 @@ span {
   @extend %h3-fonts;
   // text-transform: capitalize;
   text-transform: uppercase;
-  color: $prime-color;
+  color: rgba($color: $prime-color, $alpha: 0.81);
   letter-spacing: 0.1em;
   font-weight: 600;
 }
@@ -279,9 +280,11 @@ h2-card {
 //   @extend %h4-fonts;
 // }
 
-// h5 {
-//   @extend %h5-fonts;
-// }
+h5 {
+  @extend %h5-fonts;
+  font-size: 0.9em;
+  color: $prime-color;
+}
 
 // p {
 //   @extend %p-cont;
@@ -312,7 +315,7 @@ h2-card {
 #scroll {
   position: fixed;
   right: 10px;
-  bottom: 10px;
+  bottom: 0;
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -326,7 +329,7 @@ h2-card {
 }
 #scroll span {
   position: absolute;
-  top: 50%;
+  top: 72%;
   left: 50%;
   margin-left: -12px;
   margin-top: -2px;
@@ -347,12 +350,12 @@ h2-card {
 // /////////////////////////////// SCROLL DOWN /////////////////////////////////////////////
 
 #scroll-down a {
-  padding-top: 70px;
+  padding-top: 90px;
   z-index: 3;
 }
 #scroll-down a span {
   position: absolute;
-  bottom: 18%;
+  bottom: 6%;
   left: 50%;
   width: 24px;
   height: 24px;
@@ -770,8 +773,8 @@ h1 {
   }
 }
 .animated-title {
-  color: #222;
-  font-family: Roboto, Arial, sans-serif;
+  // color: #222;
+  // font-family: Roboto, Arial, sans-serif;
   height: 100vmin;
   left: 50%;
   position: absolute;
@@ -826,8 +829,8 @@ h1 {
   padding-top: 0.5em;
   text-align: left;
   // line-height: 1em;
-  color: $prime-color;
-  // font-weight: 400;
+  color: rgba($color: $prime-color, $alpha: 0.81);
+  font-weight: 300;
 }
 
 .animated-title > div.text-bottom {
@@ -857,7 +860,7 @@ h1 {
 }
 
 .type-text {
-  color: $prime-color;
+  color: rgba($color: $prime-color, $alpha: 0.81);
   line-height: 1.2em;
   // font-weight: 400;
 }
@@ -1062,12 +1065,14 @@ h1 {
 
 .about {
   height: 50vh;
+  padding: 1.5em;
 }
 
 //------------Mobile About Section ----------//
 
 .abt-content {
   margin-top: 0.01em;
+
   height: 100%;
   background-image: url("../img/about-kid\ \(1\).jpg");
   background-position: center;
@@ -1113,9 +1118,9 @@ h1 {
   z-index: 1;
 }
 
-.abt-link {
+.abt-link h5 {
   text-align: center;
-  font-weight: 600;
+
   letter-spacing: 0.1em;
   color: rgba($color: $second-color, $alpha: 0.81);
   text-transform: uppercase;
@@ -1344,7 +1349,8 @@ label {
 
 .services {
   height: 50vh;
-  border-top: 1px solid #000;
+  // border-top: 1px solid #000;
+  padding: 1.5em;
 }
 
 .serv-content {
@@ -1394,7 +1400,7 @@ label {
   z-index: 3;
 }
 
-.serv-link {
+.serv-link h5 {
   color: rgba($color: $prime-color, $alpha: 0.81);
 
   // padding-bottom: 10px;
@@ -1603,7 +1609,13 @@ serv-over-cont:nth-child(3) {
 
 .work {
   height: 150vh;
-  border-top: 1px solid #000;
+  // border-top: 1px solid #000;
+}
+
+.prj-one,
+.prj-two,
+.prj-three {
+  padding: 1.5em;
 }
 
 .prj-one .wrk-content {
@@ -1619,7 +1631,8 @@ serv-over-cont:nth-child(3) {
 }
 
 .wrk-content {
-  height: 50vh;
+  height: 45vh;
+
   // height: 100%;
 
   background-position: center;
@@ -1656,6 +1669,7 @@ serv-over-cont:nth-child(3) {
 }
 
 .wrk-info {
+  margin: 0;
   grid-column: 1;
   grid-row: 1;
   height: 100%;
@@ -1669,23 +1683,26 @@ serv-over-cont:nth-child(3) {
 }
 
 .wrk-link {
+  align-self: center;
+  justify-self: center;
   text-align: center;
 
   // border-bottom: 3px solid $second-color;
   z-index: 3;
 }
 
-.prj-two .wrk-link {
+.prj-two .wrk-link h5 {
   text-align: center;
-  color: $prime-color;
+  color: rgba($color: $prime-color, $alpha: 0.81);
   // border-bottom: 3px solid $second-color;
   z-index: 3;
 }
 
-.wrk-link p {
+.wrk-link h5 {
+  margin: 0;
   text-align: center;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-weight: 300;
+  // letter-spacing: 0.1em;
   color: rgba($color: $second-color, $alpha: 0.81);
   text-transform: uppercase;
   // padding-bottom: 10px;
@@ -2097,7 +2114,8 @@ serv-over-cont:nth-child(3) {
 
 // /////////////////////// Contact Form /////////////////////////////////////////
 .contact {
-  height: 100vh;
+  height: 108vh;
+  min-width: 100%;
 }
 #contact-form .container {
   padding: 1em 0;
@@ -2105,18 +2123,20 @@ serv-over-cont:nth-child(3) {
 }
 
 .cnt-title {
+  height: 18vh;
   padding: 1em 0;
 }
 
 input[type="text"],
 select,
 textarea {
+  margin: 0;
   width: 100%;
   padding: 12px;
-  border: none;
+  border: 1px solid $prime-color;
   // border-radius: 4px;
   resize: vertical;
-  background-color: #09080e;
+  background-color: $bck-color;
   color: #fff;
 }
 
@@ -2124,13 +2144,15 @@ label {
   text-align: left;
   padding: 12px 12px 12px 0;
   display: inline-block;
+  color: $second-color;
 }
 
 input[type="submit"] {
-  background-color: #51aec0;
+  margin: 2em 0;
+  background-color: $bck-color;
   color: white;
   padding: 12px 20px;
-  border: none;
+  border: 1px solid $second-color;
   width: 100%;
   border-radius: 4px;
   cursor: pointer;
@@ -2143,20 +2165,29 @@ input[type="submit"]:hover {
 
 .container {
   border-radius: 5px;
-  background-color: #18171c;
+  // background-color: $bck-color;
   // padding: 20px;
 }
 
 .col-25 {
-  float: right;
+  float: left;
   width: 100%;
   margin-top: 6px;
+}
+
+.col-25 h5 {
+  color: $second-color;
 }
 
 .col-75 {
   float: left;
   width: 100%;
   margin-top: 6px;
+  color: $second-color;
+}
+
+.col-75 input {
+  color: red;
 }
 
 /* Clear floats after the columns */
