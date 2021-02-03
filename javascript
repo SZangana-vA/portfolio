@@ -195,6 +195,16 @@ function workThreeCloseNav() {
   document.getElementById("prjThree").style.width = "0%";
 }
 
+// prj 4
+function workFourOpenNav() {
+  document.getElementById("prjFour").style.width = "100%";
+
+}
+
+function workFourCloseNav() {
+  document.getElementById("prjFour").style.width = "0%";
+}
+
 // document.getElementById("workNav").addEventListener('click', workOpenNav);
 
 // function workOpenNav() {
