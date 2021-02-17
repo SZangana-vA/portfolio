@@ -265,7 +265,7 @@ p {
 }
 
 a {
-  font-size: 1.7em;
+  font-size: 1.7rem;
   color: $prime-color;
   font-weight: 300;
 }
@@ -280,6 +280,11 @@ h3 {
 
 h2-card {
   @extend %h2-fonts;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
@@ -2580,8 +2585,11 @@ input[type="submit"]:hover {
  */
 
 @media (min-width: 1281px) and (max-width: 2000px) {
+  a {
+    font-size: 2.7rem;
+  }
   %sect-head-link {
-    font-size: 2.7em;
+    font-size: 5.4rem;
     // font-size: 2.9em;
   }
 
@@ -2961,7 +2969,7 @@ input[type="submit"]:hover {
   .dsk-prj-over-info {
     grid-column: 3;
     grid-row: 2;
-    justify-self: center;
+    justify-self: start;
     // display: flex;
     // flex-direction: column;
     // justify-content: start;
@@ -2972,6 +2980,7 @@ input[type="submit"]:hover {
   }
 
   #sticky {
+    margin-left: 2rem;
     display: block;
     position: sticky;
     position: -webkit-sticky;
@@ -2996,6 +3005,8 @@ input[type="submit"]:hover {
   .dsk-prj-over-info ul {
     grid-column: 1;
     grid-row: 1;
+    justify-self: center;
+    text-align: left;
   }
 
   .dsk-vst-syt {
