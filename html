@@ -1,3462 +1,1193 @@
-@font-face {
-  font-family: Proxima-Nova-Thin;
-  src: url(font/Proxima-Nova-Thin.otf);
-  font-family: Proxima-Nova-Thin;
-}
-
-$font-header: "Poppins", sans-serif;
-// $font-header: "Proxima-Nova-Thin", sans-serif;
-$para-text: "Montserrat", Helvetica, sans-serif;
-
-// $bck-color: #191919;
-// $bck-color: #274047;
-
-$bck-color: #24292b;
-// $drk-color-2: #24292b;
-$drk-color-2: #1d2425;
-$second-color: #c922f3;
-$prime-color: #4187e6;
-$third-color: #6d3ce1;
-// $bck-color: #0e0240;
-// $bck-color: #2e3047;
-// $bck-color: #0d0d0d;
-// $bck-color: #252c3f;
-// $prime-color: #252c3f;
-// $second-color: #d38d8c;
-
-// $second-color: #bd0fe1;
-// $third-color: #8da9a6;
-
-// $third-color: #5e74a2;
-// $prime-color: #768db6;
-// $prime-color: #f4d9be;
-// $prime-color: #fe958d;
-
-$fifth-color: #849cac;
-
-// $second-color: #9c795c;
-// $second-color: #b0976d;
-// $second-color: #3bba9c;
-// $second-color: #71291d;
-$text-color: #94949c;
-// $text-color: #faf1f1;
-$font-color: #c0baba;
-$para-color: #ece0c7;
-
-%sect-head-link {
-  font-family: $font-header;
-  font-size: 4.5em;
-  // font-size: 2.9em;
-  text-align: center;
-}
-
-%h1-sect-title {
-  font-size: 27rem;
-}
-
-%h2-fonts {
-  font-family: $font-header;
-  font-size: 1.44em;
-  // font-weight: 100;
-  // color: #cd989d;
-}
-
-%h3-fonts {
-  font-family: $font-header;
-  font-size: 1.8em;
-}
-
-%h4-fonts {
-  font-family: $font-header;
-  // font-size: 1.7em;
-  font-weight: 100;
-  padding-bottom: 10px;
-}
-
-%h5-fonts {
-  font-family: $font-header;
-  font-size: 1.05em;
-  font-weight: 300;
-}
-
-%p-cont {
-  font-family: $para-text;
-  font-size: 1.5em;
-  // font-weight: 300;
-
-  // color: #e4e5e7;
-}
-
-%a-links {
-  font-family: $font-header;
-  font-size: 1.1em;
-  font-weight: 200;
-  // text-transform: uppercase;
-  letter-spacing: 0.2em;
-  text-align: left;
-  // color: #8995a9;
-}
-
-%nav-links {
-  font-family: $font-header;
-  font-size: 0.7em;
-  font-weight: 200;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  text-align: left;
-  // color: #8995a9;
-}
-%head-one {
-  font-family: $font-header;
-  font-size: 1.6em;
-  font-weight: 300;
-}
-
-%worklinks {
-  font-family: $font-header;
-  font-size: 1.4em;
-  font-weight: 300;
-  // color: #fff;
-}
-
-%para-cont {
-  font-family: $para-text;
-  font-size: 1.4em;
-  font-weight: 300;
-  // color: #faf1f1;
-}
-
-%descri-cont {
-  font-family: $font-header;
-  font-size: 0.9em;
-  font-weight: 300;
-  // color: #202020;
-}
-
-%descri-cont-2 {
-  font-family: $font-header;
-  font-size: 0.9em;
-  font-weight: 300;
-  color: #fff;
-}
-
-%foot-links {
-  font-family: $font-header;
-  font-size: 0.9em;
-  font-weight: 300;
-  color: $para-color;
-  text-decoration: none;
-  list-style-type: none;
-}
-
-%qoutes {
-  font-family: $font-header;
-  font-size: 0.72em;
-  font-weight: 300;
-  // color: #fff;
-  // filter:brightness(100%)
-}
-
-%work-links {
-  font-family: $font-header;
-  font-size: 1.4em;
-  font-weight: 300;
-  // color: #e49f9e;
-}
-
-/* Basic styles */
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-// :root {
-//   --bg-color: #e9abac;
-// }
-html {
-  scroll-behavior: smooth;
-  font-size: 62.5%;
-}
-
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  cursor: crosshair;
-  background-color: $drk-color-2;
-  font-family: "Poppins", sans-serif;
-
-  // font-size: 1rem;
-  // line-height: 1.2;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-main {
-  position: relative;
-  z-index: 1;
-  height: 100vh;
-  overflow-x: hidden;
-  box-shadow: 0 0 50px #000;
-  transition: transform 0.5s;
-}
-
-/* #Vertical Scroll Bar
-===================================================================================================== */
-/* width */
-::-webkit-scrollbar {
-  width: 0.5em;
-  height: 1em;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 5px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: $third-color;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #e49f9e;
-}
-
-/* #Cursor
-===================================================================================================== */
-
-span {
-  @extend %sect-head-link;
-  color: rgba($color: $prime-color, $alpha: 0.81);
-}
-
-.span-title {
-  @extend %sect-head-link;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: rgba($color: $second-color, $alpha: 0.81);
-  text-transform: uppercase;
-}
-
-.h3-title {
-  // @extend %h3-fonts;
-  // text-transform: capitalize;
-  text-transform: uppercase;
-  color: rgba($color: $prime-color, $alpha: 0.81);
-  letter-spacing: 0.1em;
-  font-weight: 600;
-}
-
-p {
-  font-size: 2.7rem;
-  color: $para-color;
-  font-weight: 300;
-}
-
-a {
-  font-size: 1.7rem;
-  color: $prime-color;
-  font-weight: 300;
-}
-
-a:hover {
-  color: $second-color;
-}
-
-h3 {
-  font-size: 3.6rem;
-}
-
-h2-card {
-  @extend %h2-fonts;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  font-size: 2.7rem;
-}
-
-// h3 {
-//   @extend %h3-fonts;
-//   padding: 0;
-//   margin: 0;
-// }
-
-// h4 {
-//   @extend %h4-fonts;
-// }
-
-h5 {
-  @extend %h5-fonts;
-  font-size: 0.9em;
-  color: $prime-color;
-}
-
-// p {
-//   @extend %p-cont;
-// }
-
-// q {
-//   @extend %qoutes;
-// }
-
-// --------------------- Scroll Animation Class --------------- //
-
-.text-fade-left {
-  opacity: 0;
-  transform: translateX(-2em);
-  transition: transform 6s 0.25s cubic-bezier(0, 1, 0.3, 1),
-    opacity 0.5s 0.25s ease-out;
-
-  will-change: transform, opacity;
-}
-
-.text-fade-left.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.text-fade-bottom {
-  opacity: 0;
-  transform: translateY(2em);
-  transition: transform 6s 0.25s cubic-bezier(0, 1, 0.3, 1),
-    opacity 0.5s 0.25s ease-out;
-
-  will-change: transform, opacity;
-}
-
-.text-fade-bottom.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-// ////////////////////////////////////////// SCROLL BUTTONS //////////////////////////////
-
-// /////////////////////////////// TO TOP /////////////////////////////////////////////
-// #scroll {
-//   position: fixed;
-//   right: 10px;
-//   bottom: 20px;
-//   cursor: pointer;
-//   width: 50px;
-//   height: 50px;
-//   // background-color:rgba(0, 0, 0, 0.2);
-//   text-indent: -9999px;
-//   display: none;
-//   z-index: 200;
-//   -webkit-border-radius: 60px;
-//   -moz-border-radius: 60px;
-//   border-radius: 60px;
-// }
-// #scroll span {
-//   position: absolute;
-//   top: 72%;
-//   left: 50%;
-//   margin-left: -12px;
-//   margin-top: -2px;
-//   width: 24px;
-//   height: 24px;
-//   border-left: 1px solid #fff;
-//   border-bottom: 1px solid #fff;
-//   -webkit-transform: rotate(45deg);
-//   transform: rotate(135deg);
-// }
-// #scroll:hover {
-//   background-color: rgba(0, 0, 0, 0.2);
-//   opacity: 1;
-//   filter: "alpha(opacity=100)";
-//   -ms-filter: "alpha(opacity=100)";
-// }
-
-// /////////////////////////////// SCROLL DOWN /////////////////////////////////////////////
-
-#scroll-down a {
-  padding-top: 90px;
-  z-index: 3;
-}
-#scroll-down a span {
-  position: absolute;
-  bottom: 4%;
-  left: 50%;
-  width: 24px;
-  height: 24px;
-  margin-left: -12px;
-  border-left: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  -webkit-animation: sdb05 1.5s infinite;
-  animation: sdb05 1.5s infinite;
-  box-sizing: border-box;
-}
-@-webkit-keyframes sdb05 {
-  0% {
-    -webkit-transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
-}
-@keyframes sdb05 {
-  0% {
-    transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
-}
-
-/* //////////////////////////////////////////// HEADER //////////////////////////////////////////////// */
-
-/* #nav-bar-svg
-========================================================================================= */
-.nav-open main {
-  transform: scale(0.8);
-}
-
-.intro {
-  height: 100vh;
-  width: 100%;
-  display: table;
-  background: #26292f url("../img/bg.jpg") no-repeat center center;
-  background-size: cover;
-}
-
-h1 {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 45px;
-  color: white;
-}
-
-.nav-trigger {
-  position: fixed;
-  z-index: 2000;
-  bottom: 3.4%;
-  right: 3.4%;
-  height: 36px;
-  width: 36px;
-
-  overflow: hidden;
-  color: #455d8c;
-
-  text-shadow: 0 0 30px #228dff;
-  white-space: nowrap;
-  text-indent: 100%;
-  // background-color: #E49F9E;
-  border: 1px solid $prime-color;
-
-  border-radius: 50%;
-  padding: 0.5em;
-  box-shadow: 0 20px 20px -17px rgba(0, 111, 255, 0.53);
-}
-.nav-trigger:hover {
-  transform: scale(1.3);
-  box-shadow: 0 30px 45px -15px rgba(0, 111, 255, 0.65);
-}
-
-.nav-trigger span,
-.nav-trigger span::before,
-.nav-trigger span::after {
-  position: absolute;
-  height: 2px;
-  width: 27px;
-  background: #999999;
-
-  // box-shadow: 3px 5px #000;
-}
-
-.nav-trigger span {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  transition: background 0.3s;
-}
-
-.nav-trigger span::before,
-.nav-trigger span::after {
-  content: "";
-  top: 0;
-  left: 0;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.nav-trigger span::before {
-  transform: translateY(-9px);
-  transform: rotate(90deg);
-}
-
-.nav-trigger span::after {
-  transform: scale(0);
-  transform: translateY(12px);
-  transform: rotate(90deg);
-}
-
-.nav-trigger:hover span,
-.nav-trigger:hover span::before,
-.nav-trigger:hover span::after {
-  background: white;
-}
-
-.nav-open .nav-trigger span {
-  background: transparent;
-}
-
-.nav-open .nav-trigger span::before,
-.nav-open .nav-trigger span::after {
-  background: $second-color;
-}
-
-.nav-open .nav-trigger span::before {
-  transform: rotate(0deg);
-}
-
-.nav-open .nav-trigger span::after {
-  transform: rotate(0deg);
-}
-
-.overlay {
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: $bck-color;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s, visibility 0.5s;
-}
-
-.nav-open .overlay {
-  opacity: 0.6;
-  visibility: visible;
-}
-
-.nav-container {
-  position: fixed;
-  z-index: 3;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 61.8%;
-  max-width: 460px;
-  padding: 2em;
-  background: #f3f3f3;
-  overflow: auto;
-  transform: translateZ(0);
-  transform: translateX(100%);
-  transition: transform 0.5s cubic-bezier(0.07, 0.23, 0.34, 1);
-}
-
-.nav-open .nav-container {
-  transform: translateX(0);
-}
-
-.nav-container h2 {
-  ///////// Fix the fontsize issue !!! ///////
-  font-size: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #aaaaaa;
-  margin: 1.5em 0;
-}
-
-.nav {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: space-evenly;
-}
-
-.nav a {
-  display: block;
-  padding: 1.4em 0;
-  // font-size: 40px;
-  // font-weight: bold;
-  // font-family: serif;
-  // text-decoration: none;
-  color: #1f2b3d;
-  transform: translateZ(0);
-}
-
-.nav-open .nav a {
-  animation: slide-in 0.4s 0.2s backwards;
-}
-
-.nav-open .nav li:nth-of-type(2) a {
-  animation-delay: 0.3s;
-}
-
-.nav-open .nav li:nth-of-type(3) a {
-  animation-delay: 0.4s;
-}
-
-.nav-open .nav li:nth-of-type(4) a {
-  animation-delay: 0.5s;
-}
-
-.nav-open .nav li:nth-of-type(5) a {
-  animation-delay: 0.6s;
-}
-
-.nav-open .nav li:nth-of-type(6) a {
-  animation-delay: 0.7s;
-}
-
-@keyframes slide-in {
-  0% {
-    opacity: 0;
-    transform: translateX(80px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.nav a {
-  @extend %nav-links;
-  // font-size: 1.4em;
-  // font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #202020;
-  text-decoration: none;
-  span {
-    font-weight: 100;
-    transition: all 0.3s;
-    border-bottom: 1px solid;
-  }
-  span:nth-child(2) {
-    transition-delay: 0.1s;
-  }
-  span:nth-child(3) {
-    transition-delay: 0.2s;
-  }
-  span:nth-child(4) {
-    transition-delay: 0.3s;
-  }
-  span:nth-child(5) {
-    transition-delay: 0.4s;
-  }
-  span:nth-child(6) {
-    transition-delay: 0.5s;
-  }
-  span:nth-child(7) {
-    transition-delay: 0.6s;
-  }
-  span:nth-child(8) {
-    transition-delay: 0.7s;
-  }
-  &:hover {
-    span {
-      font-weight: 900;
-    }
-    span:nth-child(4) {
-      transition-delay: 0.3s;
-    }
-    span:nth-child(3) {
-      transition-delay: 0.2s;
-    }
-    span:nth-child(2) {
-      transition-delay: 0.1s;
-    }
-    span:nth-child(1) {
-      transition-delay: 0s;
-    }
-  }
-
-  &.hover-shadow {
-    &:hover {
-      $color: rgb(235, 17, 17);
-      text-shadow: 1px 1px 0px $color, 2px 2px 0px $color, 3px 3px 0px $color;
-    }
-  }
-  &.hover-color {
-    &:hover {
-      $color: rgb(231, 20, 20);
-      //color: darkmagenta;
-      border-color: darkmagenta;
-    }
-  }
-}
-
-//   #========================================================hero-section {
-
-//   }
-
-.menu-dsk-titl {
-  display: none;
-}
-
-.hero-sec {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-}
-
-.hero-content {
-  box-shadow: 18px 18px 16px 0 rgba(209, 207, 207, 0.1) inset;
-  height: 100vh;
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  padding: 0 9%;
-  align-self: start;
-  margin: 0;
-  line-height: 1.4em;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 0.25fr repeat(2, 1fr);
-}
-
-.name-logo {
-  grid-column: 1;
-  grid-row: 1;
-  text-align: start;
-  // padding: 9%;
-  justify-self: start;
-  align-self: center;
-
-  position: relative;
-  top: 0%;
-  // padding: 0 9%;
-}
-
-.name-logo img {
-  width: 2.7em;
-}
-
-// .name-logo a {
-//   color: $prime-color;
-//   // text-transform: uppercase;
-//   text-decoration: none;
-// }
-
-.port-title {
-  grid-column: 1;
-  grid-row: 1;
-  text-align: right;
-  padding-right: 9%;
-  justify-self: end;
-  align-self: center;
-
-  position: relative;
-  top: 0%;
-  // position: relative;
-  // top: 0%;
-  // color: $prime-color;
-}
-.port-title a {
-  // text-transform: uppercase;
-  text-decoration: none;
-}
-
-////////////////////////////
-
-@keyframes showTopText {
-  0% {
-    transform: translate3d(0, 100%, 0);
-  }
-  40%,
-  60% {
-    transform: translate3d(0, 50%, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes showBottomText {
-  0% {
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-.animated-title {
-  // font-size: 1.8em;
-  // color: #222;
-  // font-family: Roboto, Arial, sans-serif;
-  height: 100vmin;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vmin;
-  // font-weight: 400;
-}
-.animated-title > div {
-  height: 50%;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-}
-.animated-title > div div {
-  // font-size: 12vmin;
-  padding: 1em 0;
-  position: absolute;
-}
-.animated-title > div div span {
-  display: block;
-}
-.animated-title > div.text-top {
-  border-bottom: 2px solid #c922f3;
-  top: 0;
-}
-.animated-title > div.text-top div {
-  animation: showTopText 1s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-  bottom: 0;
-  transform: translate(0, 100%);
-}
-.animated-title > div.text-top div span:first-child {
-  color: $text-color;
-  margin-bottom: 0.3em;
-  text-align: left;
-  line-height: 1em;
-  font-weight: 300;
-}
-
-.int-grt {
-  color: $text-color;
-  padding-top: 0.5em;
-  text-align: left;
-  font-weight: 300;
-  // line-height: 1em;
-}
-
-.hero-name {
-  // color: #767676;
-
-  padding-top: 0.5em;
-  text-align: left;
-  line-height: 4rem;
-  color: rgba($color: $prime-color, $alpha: 0.81);
-  font-weight: 300;
-}
-
-.animated-title > div.text-bottom {
-  bottom: 0;
-  // height: 1em;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(2, 1fr);
-}
-.animated-title > div.text-bottom div {
-  animation: showBottomText 0.5s;
-  animation-delay: 1.75s;
-  animation-fill-mode: forwards;
-  top: 0;
-  transform: translate(0, -100%);
-}
-.job-tytl {
-  color: $text-color;
-  display: flex;
-  flex-direction: column;
-}
-.job-tytl p {
-  // @extend %h3-fonts;
-  line-height: 4rem;
-  padding: 0;
-  margin: 0;
-}
-
-.type-text {
-  color: rgba($color: $prime-color, $alpha: 0.81);
-  line-height: 1.2em;
-  font-weight: 300;
-}
-
-// span {
-//   border-right: 0.05em solid;
-//   animation: caret 1s steps(1) infinite;
-// }
-
-// @keyframes caret {
-//   50% {
-//     border-color: transparent;
-//   }
-// }
-
-// .job-tytl a {
-//   @extend %p-cont;
-//   margin-top: 0.5em;
-//   padding: 0;
-//   color: $second-color;
-//   text-decoration: none;
-//   font-weight: 900;
-// }
-
-.hero-call-action {
-  grid-column: 1;
-  grid-row: 2;
-  justify-self: left;
-  align-self: end;
-  display: flex;
-  flex-direction: column;
-  padding-top: 1em;
-  // justify-content: flex-end;
-}
-
-.hero-call-action a {
-  text-align: left;
-  padding: 0 0.5em;
-  margin: 0.18em 0;
-  font-size: 0.9em;
-  // text-transform: uppercase;
-  color: $prime-color;
-}
-
-.hero-call-action a:hover {
-  transform: scale(1.3);
-}
-
-////////////////////////////////////
-
-.hero-greet h2 {
-  padding: 0;
-  margin: 0;
-}
-
-/* title styles */
-
-.home-title {
-  grid-column: 1;
-  grid-row: 2;
-  align-self: center;
-  // @extend %head-one;
-
-  z-index: 1;
-  // background: #E49F9E;
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(3, auto);
-  // text-align: center;
-}
-
-.hero-name span {
-  grid-row: 1;
-  position: relative;
-  overflow: hidden;
-  display: block;
-  line-height: 1.4;
-  padding: 0;
-  margin: 0;
-  // font-family: 'Spartan', sans-serif;
-  // font-weight: 900;
-  // text-transform: uppercase;
-  // font-size: 1.4em;
-  text-align: center;
-  color: $text-color;
-}
-
-.hero-job {
-  grid-row: 2;
-  text-align: center;
-  color: $prime-color;
-  padding: 0;
-  margin: 0;
-  @extend %para-cont;
-  // grid-column: 1;
-  // grid-row: 2;
-  // font-family: 'Montserrat', sans-serif;
-}
-
-.home-title span::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: #202020;
-  animation: a-ltr-after 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
-  transform: translateX(-101%);
-}
-
-.home-title span::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--bg-color);
-  // opacity: .6;
-  animation: a-ltr-before 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
-  transform: translateX(0);
-}
-
-.home-title span:nth-of-type(1)::before,
-.home-title span:nth-of-type(1)::after {
-  animation-delay: 1s;
-}
-
-.home-title span:nth-of-type(2)::before,
-.home-title span:nth-of-type(2)::after {
-  animation-delay: 1.5s;
-}
-
-@keyframes a-ltr-after {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(101%);
-  }
-}
-
-@keyframes a-ltr-before {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(200%);
-  }
-}
-
-.hero-link {
-  grid-column: 1;
-  grid-row: 3;
-  align-self: center;
-  display: grid;
-  grid-template-column: auto;
-  grid-template-rows: repeat(2, 1fr);
-}
-
-.hero-svg-wrapper {
-  // position: relative;
-  // top: 5%;
-  height: 4.5em;
-  transform: translateY(-50%);
-  margin: 0 auto;
-  width: 100%;
-  line-height: 3rem;
-}
-
-.hero-cnt-link {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: end;
-}
-
-.hero-wrk-link {
-  grid-column: 1;
-  grid-row: 2;
-  // align-self: end;
-  // justify-self: start;
-}
-.hero-svg-wrapper .shape {
-  // width: 60%;
-  stroke-dasharray: 140 540;
-  stroke-dashoffset: -394;
-  stroke-width: 3px;
-  fill: transparent;
-  stroke: #c922f3;
-  border-bottom: 2px solid black;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-}
-.hero-svg-wrapper .text {
-  padding-right: 9%;
-
-  // font-size: 15px;
-  line-height: 1em;
-  letter-spacing: 8px;
-  color: #fff;
-  // top: -48px;
-  // position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-}
-
-.hero-svg-wrapper .text a {
-  @extend %work-links;
-  justify-self: center;
-  align-self: end;
-  padding: 0;
-  font-size: 2.7rem;
-  text-decoration: none;
-  text-align: center;
-}
-.hero-svg-wrapper:hover .shape {
-  stroke-width: 3px;
-  stroke-dashoffset: 3;
-  stroke-dasharray: 760;
-}
-
-.hero-filter {
-  // background-color: #26292f;
-  background-color: $bck-color;
-  opacity: 0.95;
-}
-
-.hero-filter {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  z-index: 1;
-  // background-color: #272c3f;
-  // height: 100vh;
-  // opacity: 0.6;
-  background: rgba(46, 49, 53, 0.54);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.36);
-  backdrop-filter: blur(6.3px);
-  -webkit-backdrop-filter: blur(6.3px);
-  // border-radius: 10px;
-}
-
-#myVideo {
-  object-fit: cover;
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  position: relative;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-  opacity: 0.9;
-}
-
-// position: fixed;
-// right: 0;
-// bottom: 0;
-// min-width: 100%;
-// min-height: 100%;
-
-//  //////////////////////////////////// MAIN SECTION //////////////////////////////////
-
-.card-filter {
-  background: rgba(46, 49, 53, 0.5);
-  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(2.7px);
-  -webkit-backdrop-filter: blur(2.7px);
-
-  // border: 6px solid rgba(255, 255, 255, 0.18);
-  // border-radius: 10px;
-  height: 100%;
-  z-index: 1;
-}
-
-// //////////////////////////////////////ABOUT SECTION ////////////////////////////////
-
-.about {
-  height: 50vh;
-  padding: 1.5em;
-}
-
-//------------Mobile About Section ----------//
-
-.abt-content {
-  margin-top: 0.01em;
-
-  height: 100%;
-  background-image: url("../img/about-kid\ \(1\).jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  // border: 9px solid $second-color;
-  opacity: 0;
-  transform: translateY(2em);
-  transition: transform 3s 0.25s cubic-bezier(0, 1, 0.3, 1),
-    opacity 0.3s 0.25s ease-out;
-
-  will-change: transform, opacity;
-}
-
-.abt-content.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.abt-dsk-content {
-  display: none;
-}
-
-.abt-info {
-  // background-color: rgba(0, 0, 0, 0.2);
-  grid-column: 1;
-  grid-row: 1;
-  align-self: center;
-  justify-self: center;
-  z-index: 2;
-}
-
-.abt-filter {
-  grid-column: 1;
-  grid-row: 1;
-  // background: rgba(46, 49, 53, 0.6);
-  // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  // backdrop-filter: blur(6.5px);
-  // -webkit-backdrop-filter: blur(6.5px);
-
-  // border: 6px solid rgba(255, 255, 255, 0.18);
-  // border-radius: 10px;
-  height: 100%;
-  z-index: 1;
-}
-
-.abt-link h5 {
-  text-align: center;
-
-  letter-spacing: 0.1em;
-  color: rgba($color: $second-color, $alpha: 0.81);
-  text-transform: uppercase;
-  // text-shadow: -2px 2px #000;
-  // padding-bottom: 10px;
-  // border-bottom: 3px solid $second-color;
-}
-
-.abt-overlay {
-  text-align: center;
-
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 201;
-  top: 0;
-  left: 0;
-  background-color: $bck-color;
-  overflow-x: hidden;
-  transition: 0.5s;
-}
-
-.abt-over-cnt-head,
-.serv-over-cnt-head,
-.wrk-over-cnt-head {
-  height: 0.25fr;
-  // grid-column: 1;
-  // grid-row: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1.5em 0.5em;
-  padding: 0;
-  z-index: 305;
-}
-
-.abt-overlay-content {
-  padding: 0 0.5em;
-  position: relative;
-
-  width: 100%;
-  text-align: left;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(5, auto);
-}
-
-.grt-hed {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.grt-hed h3 {
-  font-weight: 300;
-  // font-size: 2em;
-  color: $para-color;
-  line-height: 1.5em;
-}
-
-.abt-prof-card {
-  grid-column: 1;
-  grid-row: 2;
-  // display: grid;
-  // grid-template-columns: auto;
-  // grid-template-rows: auto;
-}
-
-.abt-prof-card-img {
-  // padding: 9% 0;
-  grid-column: 1;
-  grid-row: 1;
-  background-image: url("..//img/hero-test-1.jpg");
-  background-color: #cccccc;
-  height: 45vh;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-// .abt-ovly-grd {
-//   height: 90vh;
-//   grid-column: 1;
-//   grid-row: 1 / span 2;
-//   align-self: end;
-//   background: linear-gradient(
-//     to top,
-//     rgba(8, 10, 14, 1),
-//     rgba(8, 10, 14, 0.36),
-//     rgba(38, 39, 42, 0.32)
-//   );
-//   z-index: 203;
-// }
-
-.abt-ovly-text {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: end;
-  z-index: 204;
-  padding: 0;
-  // background-image: linear-gradient(
-  //   to bottom,
-  //   rgba(0, 0, 0, 0),
-  //   rgba(18, 19, 21, 1)
-  // );
-}
-
-.abt-ovly-text h2 {
-}
-
-.abt-ovly-text p {
-  margin: 0;
-}
-
-.abt-overlay a {
-  padding: 8px;
-  text-decoration: none;
-  // font-size: 36px;
-
-  // display: block;
-  // transition: 0.3s;
-}
-
-.abt-overlay a:hover,
-.overlay a:focus {
-  color: red;
-}
-
-.abt-overlay .abt-closebtn {
-  // padding-right: 9%;
-  // width: 3em;
-  grid-column: 1;
-  grid-row: 4;
-  position: absolute;
-  // bottom: 20px;
-  // right: 45px;
-  // font-size: 60px;
-  z-index: 13;
-  justify-self: center;
-}
-
-.outer {
-  position: relative;
-  margin: auto;
-  width: 1em;
-  // margin-top: 200px;
-  cursor: pointer;
-}
-
-.inner {
-  width: inherit;
-  text-align: center;
-}
-
-label {
-  // text-align: center;
-  font-size: 0.9em;
-  line-height: 0.5em;
-  // margin-top: -8px;
-  text-transform: uppercase;
-  color: rgb(245, 239, 239);
-  transition: all 0.3s ease-in;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.inner:before,
-.inner:after {
-  position: absolute;
-  content: "";
-  height: 1px;
-  width: inherit;
-  background: #faf1f1;
-  left: 0;
-  transition: all 0.3s ease-in;
-}
-
-.inner:before {
-  top: 50%;
-  // left: 9%;
-  transform: rotate(45deg);
-}
-
-.inner:after {
-  bottom: 50%;
-  // left: 9%;
-  transform: rotate(-45deg);
-}
-
-.outer:hover label {
-  opacity: 1;
-}
-
-.outer:hover .inner:before,
-.outer:hover .inner:after {
-  transform: rotate(0);
-}
-
-.outer:hover .inner:before {
-  top: 18%;
-}
-
-.outer:hover .inner:after {
-  bottom: 0;
-}
-.skill {
-  padding: 0;
-}
-.skill p {
-  margin-top: 0;
-}
-
-.skill li {
-  // font-size: 1.5em;
-  color: $fifth-color;
-  text-decoration: none;
-  list-style-type: none;
-  text-align: left;
-  padding: 0 3%;
-  margin: 0;
-  line-height: 1.6;
-}
-
-// /////////////////////////////////////////// SERVICES ////////////////////////////////////////////
-
-.services {
-  height: 50vh;
-  // border-top: 1px solid #000;
-  padding: 1.5em;
-}
-
-.serv-dsk-cont {
-  display: none;
-}
-
-.serv-content {
-  height: 100%;
-  background-image: url("../img/service-1.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // border: 9px solid $prime-color;
-  opacity: 0;
-  transform: translateY(2em);
-  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
-    opacity 0.3s 0.25s ease-out;
-
-  will-change: transform, opacity;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-}
-
-.serv-content.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.serv-filter {
-  // background: rgba(46, 49, 53, 0.6);
-  // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  // backdrop-filter: blur(6.5px);
-  // -webkit-backdrop-filter: blur(6.5px);
-
-  // border: 6px solid rgba(255, 255, 255, 0.18);
-  // height: 100%;
-  grid-column: 1;
-  grid-row: 1;
-  // z-index: 2;
-}
-
-.serv-info {
-  grid-column: 1;
-  grid-row: 1;
-
-  // height: 100%;
-  align-self: center;
-  justify-self: center;
-
-  z-index: 3;
-}
-
-.serv-link h5 {
-  color: rgba($color: $prime-color, $alpha: 0.81);
-
-  // padding-bottom: 10px;
-  // border-bottom: 3px solid $prime-color;
-}
-
-// .serv-link span {
-// }
-
-.serv-brf {
-  text-align: center;
-  color: #141925;
-  font-weight: 600;
-}
-
-.serv-overlay {
-  text-align: center;
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 201;
-  top: 0;
-  left: 0;
-  // background-color: rgb(0, 0, 0);
-  background-color: $bck-color;
-  overflow-x: hidden;
-  transition: 0.5s;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 0.25fr 1.5fr 0.25fr;
-}
-
-// #servNav {
-//   display: grid;
-//   grid-template-columns: auto;
-//   grid-template-rows: repeat(5, auto);
-// }
-
-.serv-overlay a {
-  padding: 8px;
-  text-decoration: none;
-  // font-size: 36px;
-}
-
-// .serv-overlay a {
-//   padding: 8px;
-//   text-decoration: none;
-
-//   color: #818181;
-//   display: block;
-//   transition: 0.3s;
-// }
-
-.serv-overlay a:hover,
-.overlay a:focus {
-  color: red;
-}
-
-.serv-overlay .serv-closebtn {
-  font-size: 2.2em;
-  line-height: 0.5em;
-  // @extend %para-cont;
-  position: absolute;
-  // margin-bottom: .25em;
-  text-align: center;
-  grid-column: 1;
-  grid-row: 3;
-  justify-self: center;
-}
-
-.ser-over-cnt-head {
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0.5em;
-  padding: 0;
-}
-
-// .ser-brand-name a {
-// }
-
-.serv-over-cont {
-  margin: 1em 0.5em;
-  grid-column: 1;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(3, 1fr);
-}
-
-serv-over-cont:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-serv-over-cont:nth-child(2) {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-serv-over-cont:nth-child(3) {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.serv-bar {
-  // grid-column: 1;
-  // grid-row: 1;
-  // border: 1px solid red;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(2, auto);
-}
-
-.over-enter {
-  grid-column: 1;
-  grid-row: 1;
-  display: grid;
-  grid-template-rows: auto;
-}
-
-.serv-bar img {
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: center;
-  align-self: center;
-  width: 18rem;
-}
-
-#line_l {
-  -webkit-animation: line_l_animation 3s infinite;
-  animation: line_l_animation 3s infinite;
-}
-
-@-webkit-keyframes line_l_animation {
-  0% {
-    right: calc(2% + 50px);
-    width: 0px;
-  }
-  35% {
-    right: calc(2% + 0px);
-    width: 100%;
-  }
-  70% {
-    right: calc(2% + 0px);
-    width: 0px;
-  }
-  100% {
-    right: calc(2% + 0px);
-    width: 0px;
-  }
-}
-.over-info {
-  grid-column: 1;
-  grid-row: 2;
-  text-align: left;
-  padding: 0 0.5em;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(2, auto);
-}
-
-.over-info-txt {
-  grid-column: 1;
-  grid-row: 1;
-}
-.over-info-txt h3 {
-  color: $prime-color;
-}
-
-.over-info-txt p {
-  // font-size: 1.5em;
-  color: $text-color;
-  font-weight: 600;
-}
-
-.cross-line {
-  grid-column: 1;
-  grid-row: 2;
-  justify-self: center;
-  align-self: center;
-  position: relative;
-  top: 2px;
-  padding: 0;
-  margin: 0.5em 0;
-  color: white;
-  font-size: 1em;
-}
-.line {
-  grid-column: 1;
-  grid-row: 2;
-  justify-self: center;
-  align-self: end;
-  width: 100%;
-  height: 1px;
-  background: #fff;
-  padding: 0;
-  margin: 0;
-  // position: fixed;
-  /*     top: 50%; */
-}
-
-// ///////////////////////////////// WORK ///////////////////////////////////////////
-
-.work {
-  height: 230vh;
-  // border-top: 1px solid #000;
-}
-
-.prj-one,
-.prj-two,
-.prj-three,
-.prj-four {
-  padding: 1.5em;
-}
-
-.prj-one .wrk-content {
-  background-image: url("../img/zz-hero-img-prj-3.jpg");
-}
-
-.prj-two .wrk-content {
-  background-image: url("../img/mol-cov-crd.jpg");
-}
-
-.prj-three .wrk-content {
-  background-image: url("../img/prize-2.jpg");
-}
-
-.prj-four .wrk-content {
-  background-image: url("../img/auth-card-cvr.jpg");
-}
-
-.wrk-content {
-  height: 45vh;
-
-  // height: 100%;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // border: 9px solid $second-color;
-  opacity: 0;
-  transform: translateY(2em);
-  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
-    opacity 0.3s 0.25s ease-out;
-
-  will-change: transform, opacity;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  z-index: -1;
-}
-
-.wrk-content.is-visible {
-  opacity: 1;
-  transform: translatex(0);
-}
-
-.wrk-filter {
-  grid-column: 1;
-  grid-row: 1;
-  // background: rgba(46, 49, 53, 0.6);
-  // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  // backdrop-filter: blur(6.5px);
-  // -webkit-backdrop-filter: blur(6.5px);
-
-  // border: 6px solid rgba(255, 255, 255, 0.18);
-  // height: 100%;
-  // z-index: 2;
-}
-
-.wrk-info {
-  margin: 0;
-  grid-column: 1;
-  grid-row: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  // background-color: $prime-color;
-  // opacity: 0.9;
-  z-index: 3;
-}
-
-.wrk-link {
-  align-self: center;
-  justify-self: center;
-  text-align: center;
-
-  // border-bottom: 3px solid $second-color;
-  z-index: 3;
-}
-
-.prj-two .wrk-link h5 {
-  text-align: center;
-  color: rgba($color: $prime-color, $alpha: 0.81);
-  // border-bottom: 3px solid $second-color;
-  z-index: 3;
-}
-
-.wrk-link h5 {
-  margin: 0;
-  text-align: center;
-  font-weight: 600;
-  // letter-spacing: 0.1em;
-  // color: rgba($color: $drk-color-2, $alpha: 0.81);
-  color: $drk-color-2;
-  text-transform: uppercase;
-  // padding-bottom: 10px;
-  // border-bottom: 3px solid $second-color;
-  z-index: 3;
-}
-
-.prj-two .wrk-link p {
-  color: $prime-color;
-}
-
-.wrk-link p:hover {
-  color: $second-color;
-}
-
-// .serv-link span {
-// }
-
-.wrk-brf {
-  text-align: center;
-  color: #141925;
-  font-weight: 600;
-}
-
-.wrk-overlay {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 201;
-  top: 0;
-  left: 0;
-  // background-color: rgb(0, 0, 0);
-  // background-color: rgba(25, 20, 37, 0.98);
-  background-color: $drk-color-2;
-  overflow-x: hidden;
-  transition: 0.5s;
-  // display: grid;
-  // grid-template-columns: auto;
-  // grid-template-rows: 0.25fr 1.5fr 0.25fr;
-}
-
-.wrk-overlay a {
-  padding: 8px;
-  text-decoration: none;
-  // font-size: 36px;
-  // color: #818181;
-  // display: block;
-  // transition: 0.3s;
-}
-
-.wrk-brand-sec-title {
-  display: block;
-}
-
-.wrk-overlay a:hover,
-.overlay a:focus {
-  color: red;
-}
-
-.wrk-over-cnt-head {
-  // grid-column: 1;
-  // grid-row: 1;
-  height: 6vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0.5em;
-  padding: 0;
-}
-
-.wrk-over-cont {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-
-  margin: 0;
-  justify-content: center;
-  align-content: space-between;
-}
-
-.wrk-over-cont img {
-  grid-column: 1;
-  grid-row: 1;
-  z-index: 4;
-  width: 100%;
-}
-
-.prj-hero-over-grd {
-  height: 100%;
-  grid-column: 1;
-  grid-row: 1;
-  align-self: center;
-  background: rgb(29, 36, 32);
-  background: rgb(29, 36, 32);
-  background: linear-gradient(
-    0deg,
-    rgba(29, 36, 32, 0.9) 36%,
-    rgba(254, 254, 254, 0) 100%
-  );
-  z-index: 5;
-  // opacity: 0.9;
-}
-
-.prj-hero-title-over {
-  padding: 0 0.5em;
-  grid-column: 1;
-  grid-row: 1;
-  align-self: end;
-  z-index: 6;
-  // display: fle;
-}
-
-.prj-hero-title-over p {
-  text-align: left;
-}
-
-.prj-over-info {
-  padding: 0 0.5em;
-}
-
-.mbl-prj-over-info {
-  display: block;
-  padding: 0 0.5em;
-}
-
-#sticky {
-  display: none;
-}
-
-// .prj-img-ovrly {
-//   grid-column: 1;
-//   grid-row: 1 / span 2;
-//   z-index: 2;
-//   width: 100%;
-//   height: 100%;
-//   background: rgba(7, 7, 7, 0.3);
-// }
-
-// .clnt-tytl {
-//   padding: 0 3%;
-//   grid-column: 1;
-//   grid-row: 1 / span 2;
-//   z-index: 3;
-//   align-self: center;
-//   justify-self: center;
-// }
-
-// .clnt-tytl h1 {
-//   color: $second-color;
-//   font-weight: 400;
-//   font-size: 2.7;
-// }
-
-// .wrk-over-cont {
-//   padding: 0 0.5em;
-//   display: grid;
-//   grid-template-columns: auto;
-//   grid-template-rows: repeat(2, 1fr) 0.25fr;
-// }
-.wrk-over-cont img {
-  grid-column: 1;
-  grid-row: 1;
-  z-index: 1;
-  margin: 0;
-  height: 45vh;
-  max-width: 100%;
-  // padding: 6%;
-  // background-image: url("../img/produce-2.jpeg");
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // height: 54vh;
-  // line-height: 1.8em;
-  // grid-column: 1;
-  // grid-row: 1;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(2, 1fr);
-}
-// .prj-hero-img img {
-//   // box-shadow: 6px 6px 16px 0 rgba(0, 0, 0, 0.7);
-//   // border-radius: 18px;
-//   // border: 3px solid $prime-color;
-
-//   // filter: grayscale(0.6) sepia(0.48) saturate(0.8);
-//   // filter: grayscale(90%);
-//   // box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.7);
-// }
-
-.prj-info {
-  padding: 0 6%;
-  // background-image: url("../img/zz-3.jpg");
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  height: 50vh;
-  // line-height: 1.8em;
-  // // grid-column: 1;
-  // // grid-row: 1;
-  // display: grid;
-  // grid-template-columns: auto;
-  // grid-template-rows: repeat(2, 1fr);
-  // box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.7),
-  //   -8px -8px 12px 0 rgba(255, 255, 255, 0.2);
-}
-
-.mbl-prj-over-info {
-  display: grid;
-  grid-column: auto;
-  grid-row: auto;
-}
-
-.mbl-prj-over-info ul {
-  grid-column: 1;
-  grid-row: 1;
-  z-index: 3;
-  align-self: center;
-  // height: 36vh;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-}
-
-.wrk-over-cont li:nth-of-type(1),
-.wrk-over-cont li:nth-of-type(3),
-.wrk-over-cont li:nth-of-type(5) {
-  color: $prime-color;
-  font-weight: 600;
-  font-size: 1.8rem;
-  line-height: 2.7rem;
-}
-
-.wrk-over-cont li {
-  text-decoration: none;
-
-  font-weight: 300;
-  // @extend %h3-fonts;
-  // font-size: 1.7em;
-  color: $font-color;
-}
-
-.mbl-prj-over-info .vst-syt {
-  grid-column: 1;
-  grid-row: 2;
-
-  align-self: end;
-  justify-self: start;
-  z-index: 3;
-  line-height: 4rem;
-  // text-align: left;
-  text-transform: uppercase;
-  // margin-top: 1em;
-  padding: 0.5rem 0;
-  font-size: 2.7rem;
-  // @extend %h3-fonts;
-  font-weight: 300;
-  color: $second-color;
-  // border: 1px solid $text-color;
-}
-
-.prj-smpl {
-  // background-color: $prime-color;
-  padding: 0 1rem;
-}
-
-.intro-text,
-.solu-text {
-  text-align: left;
-  // margin-top: 1em;
-}
-
-.intro-text h3,
-.solu-text h3 {
-  text-transform: uppercase;
-  font-weight: 300;
-  color: $fifth-color;
-  border-top: 2px solid $second-color;
-  // text-decoration: underline;
-}
-
-.intro-text p,
-.solu-text p {
-  // @extend %h3-fonts;
-  // text-indent: 1.7em;
-  text-transform: uppercase;
-  // font-size: 1em;
-  // font-weight: 300;
-}
-
-.img-gal {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-}
-
-// .prj-sld:nth-of-type(1) {
-//   // margin: 1em 0;
-//   // // height: 300vh;
-// }
-
-// .prj-sld:nth-of-type(2) {
-//   // margin: 1em 0;
-//   // height: 27vh;
-// }
-
-.prj-sld {
-  margin: 1em 0;
-}
-
-.prj-sld img {
-  // box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.7),
-  //   -8px -8px 12px 0 rgba(255, 255, 255, 0.2);
-  height: 100%;
-}
-
-.prj-sld:nth-of-type(1) img,
-.prj-sld:nth-of-type(3) img,
-.prj-sld:nth-of-type(9) img,
-.prj-sld:nth-of-type(10) img {
-  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.7),
-    -8px -8px 12px 0 rgba(255, 255, 255, 0.2);
-}
-
-.prj-sld:nth-of-type(2) {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.prj-sld:nth-of-type(4) {
-  grid-column: 1;
-  grid-row: 5;
-}
-
-.prj-sld:nth-of-type(4) h2 {
-  font-size: 2rem;
-  color: $fifth-color;
-  opacity: 0.27;
-}
-
-.prj-sld:nth-of-type(5) {
-  width: 45%;
-  grid-column: 1;
-  grid-row: 7;
-  justify-self: end;
-}
-
-.prj-sld:nth-of-type(6) {
-  width: 45%;
-  grid-column: 1;
-  grid-row: 7;
-  justify-self: start;
-}
-
-.prj-sld:nth-of-type(9) {
-  display: none;
-}
-
-.prj-sld:nth-of-type(10) {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.prj-sld:nth-of-type(12) {
-  grid-column: 1;
-  grid-row: 6;
-}
-
-// .prj-mbl-sld {
-//   height: 45vh;
-// }
-
-// .prj-sld img {
-
-// }
-
-// .prj-sld-img {
-//   margin: 1em 0;
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   // max-width: 100%;
-//   // height: 45vh;
-//   box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.7),
-//     -8px -8px 12px 0 rgba(255, 255, 255, 0.2);
-// }
-
-// .prj-sld-img:nth-of-type(2) {
-//   background-image: url("../img/zz-desk-img-2.jpg");
-// }
-
-// .prj-sld-img:nth-of-type(3) {
-//   background-image: url("../img/zz-desk-img-1.jpg");
-// }
-
-// .prj-sld-ovrly {
-//   width: 100%;
-//   height: 27vh;
-//   background: rgba(37, 44, 63, 0.3); /* Black see-through */
-//   // border-radius: 27px;
-//   // padding: 1em;
-//   // margin: 1em 0;
-// }
-
-// .strt-prj {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .strt-prj h3 {
-//   color: #768db6;
-// }
-
-.strt-prj a {
-  // font-size: 1.7em;
-  color: $second-color;
-}
-
-.strt-prj {
-  background: 50% 100% / 50% 50% no-repeat
-    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: 1.7em;
-  // font-family: "Source Sans Pro", sans-serif;
-  animation: reveal 3000ms ease-in-out forwards 200ms,
-    glow 2500ms linear infinite 2000ms;
-
-  @keyframes reveal {
-    80% {
-      letter-spacing: 8px;
-    }
-    100% {
-      background-size: 300% 300%;
-    }
-  }
-  @keyframes glow {
-    40% {
-      text-shadow: 0 0 8px #fff;
-    }
-  }
-}
-
-.work-closebtn-mbl {
-  display: block;
-}
-
-.work-closebtn-mbl {
-  font-size: 2.2em;
-  line-height: 0.5em;
-  // @extend %para-cont;
-  // position: absolute;
-  // margin-bottom: .25em;
-  text-align: center;
-  grid-column: 1;
-  grid-row: 5;
-  justify-self: center;
-}
-
-// .prg-content {
-//   // grid-column: 1;
-//   // grid-row: 3;
-// }
-
-// .intro-text {
-//   opacity: 0;
-//   transform: translateY(20px);
-//   transition: 0.5s all ease-in-out;
-// }
-
-// .intro-appear {
-//   opacity: 1;
-//   transform: translateY(0px);
-// }
-
-// .solu-text h3 {
-//   opacity: 0;
-//   transform: translateX(-2em);
-//   transition: transform 6s 0.25s cubic-bezier(0, 1, 0.3, 1),
-//     opacity 0.5s 0.25s ease-out;
-
-//   will-change: transform, opacity;
-// }
-
-// .solu-text h3.is-visible {
-//   opacity: 1;
-//   transform: translateY(0);
-// }
-
-// .solu-text p {
-//   opacity: 0;
-//   transform: translateY(4em);
-//   transition: transform 7s 0.5s cubic-bezier(0, 1, 0.8, 1),
-//     opacity 0.6s 0.25s ease-out;
-
-//   will-change: transform, opacity;
-// }
-
-// .solu-text p.is-visible {
-//   opacity: 1;
-//   transform: translateX(0);
-// }
-
-// header {
-//   opacity: 0;
-//   transition: opacity 0.5s 0.75s ease-in-out;
-// }
-
-// header.is-visible {
-//   opacity: 1;
-// }
-
-// .heading {
-//   transform: translate(-50%, calc(-50% + 1em));
-// }
-
-// is-visible .heading {
-//   transform: translate(-50%, -50%);
-// }
-
-// .heading {
-//   transition: transform 4s 0.35s cubic-bezier(0, 0.5, 0.3, 1);
-//   will-change: transform;
-// }
-
-// /////////////////////// Contact Form /////////////////////////////////////////
-.contact {
-  height: 100vh;
-  min-width: 100%;
-}
-
-#contact-form .container {
-  padding: 1em 0;
-  width: 100%;
-}
-
-.cnt-title {
-  height: 18vh;
-  padding: 1em 0;
-}
-
-input[type="text"],
-select,
-textarea {
-  margin: 0;
-  width: 100%;
-  padding: 12px;
-  border: 1px solid $prime-color;
-  // border-radius: 4px;
-  resize: vertical;
-  background-color: $bck-color;
-  color: #fff;
-}
-
-label {
-  text-align: left;
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-  color: $second-color;
-}
-
-input[type="submit"] {
-  margin: 2em 0;
-  @extend %h2-fonts;
-  font-size: 1em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background-color: $bck-color;
-  color: white;
-  padding: 12px 20px;
-  border: 1px solid $second-color;
-  width: 100%;
-  border-radius: 4px;
-  cursor: pointer;
-  float: center;
-}
-
-input[type="submit"]:hover {
-  color: $bck-color;
-  background-color: $second-color;
-  font-weight: 600;
-}
-
-.container {
-  border-radius: 5px;
-  // background-color: $bck-color;
-  // padding: 20px;
-}
-
-.col-25 {
-  float: left;
-  width: 100%;
-  margin-top: 6px;
-}
-
-.col-25 h5 {
-  color: $second-color;
-}
-
-.col-75 {
-  float: left;
-  width: 100%;
-  // margin-top: 6px;
-  color: $second-color;
-}
-
-#subject {
-  @extend %h2-fonts;
-}
-
-#country {
-  @extend %h2-fonts;
-}
-
-.col-75 input {
-  @extend %h2-fonts;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-// ////////////////////// FOOTER ////////////////////////////////
-
-.footer {
-  margin: 0;
-  height: 108vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.foot-list {
-  width: 100%;
-}
-
-.foot-list ul {
-  // grid-column: 1;
-
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.svg-wrapper {
-  // position: relative;
-  // top: 50%;
-  height: 1em;
-  transform: translateY(-50%);
-  margin: 0 auto;
-  width: 320px;
-}
-.shape {
-  stroke-dasharray: 140 540;
-  stroke-dashoffset: -474;
-  stroke-width: 8px;
-  fill: transparent;
-  stroke: $second-color;
-  border-bottom: 5px solid black;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-}
-.text {
-  font-family: "Roboto Condensed";
-  font-size: 22px;
-  line-height: 32px;
-  letter-spacing: 8px;
-  color: #fff;
-  top: -48px;
-  position: relative;
-}
-.svg-wrapper:hover .shape {
-  stroke-width: 2px;
-  stroke-dashoffset: 0;
-  stroke-dasharray: 760;
-}
-
-.foot-link li {
-  padding: 0.5em 0;
-  text-align: center;
-  // border-bottom: 1px solid grey;
-  font-size: 2.2em;
-}
-
-.foot-link a {
-  @extend %foot-links;
-  // text-decoration: none;
-  // color: #E9ABAC;
-}
-
-.foot-link a:hover {
-  color: $prime-color;
-}
-
-.foot-logo img {
-  padding: 0.5em 0;
-  height: 4em;
-
-  // position: relative;
-  // top: 1em;
-  // left: 1em;
-}
-
-.fa {
-  padding: 20px;
-  font-size: 60px;
-  // width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-}
-
-.fa:hover {
-  opacity: 0.7;
-  color: $second-color;
-}
-
-.fa-google {
-  // background: #dd4b39;
-  color: white;
-}
-
-.fa-linkedin {
-  // background: #007bb5;
-  color: white;
-}
-
-.fa-behance-square {
-  // background: #007bb5;
-  color: white;
-}
-
-.copy-wrt {
-  text-align: center;
-  justify-self: center;
-  padding: 1em 0;
-  @extend %descri-cont-2;
-}
-
-/* 
-  ////////////////////////////////// RESPONSIVE SECTION /////////////////////////////////
- */
-
-@media (min-width: 1281px) and (max-width: 2000px) {
-  a {
-    font-size: 2.7rem;
-  }
-  %sect-head-link {
-    font-size: 5.4rem;
-    // font-size: 2.9em;
-  }
-
-  .nav-trigger {
-    position: fixed;
-    z-index: 2000;
-    top: 1.8%;
-    right: 3.4%;
-  }
-
-  .port-title {
-    // grid-column: 1;
-    // grid-row: 1;
-    // text-align: right;
-    padding: 0;
-    justify-self: center;
-  }
-
-  .animated-title {
-    top: 72%;
-    left: 45%;
-    width: 100vmin;
-  }
-
-  .animated-title > div div {
-    font-size: 3.3vmin;
-  }
-
-  .hero-link {
-    // position: relative;
-    // left: 45%;
-    grid-column: 1;
-    grid-row: 3;
-    justify-self: end;
-    align-self: end;
-    margin-bottom: 4.5rem;
-    display: flex;
-    flex-direction: row;
-  }
-
-  // .hero-svg-wrapper {
-  //   // // position: relative;
-  //   // // top: 5%;
-  //   // height: 4.5em;
-  //   // transform: translateY(-50%);
-  //   // margin: 0 auto;
-  //   width: 100%;
-  // }
-
-  .hero-svg-wrapper .shape {
-    width: 90%;
-
-    stroke-dasharray: 171 400;
-    stroke-dashoffset: -400;
-    // stroke-width: 3px;
-    // fill: transparent;
-    // stroke: #c922f3;
-    // border-bottom: 2px solid black;
-    // transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-  }
-
-  .hero-svg-wrapper .text {
-    margin: 0 2em;
-    // padding-right: 9%;
-
-    // // font-size: 15px;
-    // line-height: 1em;
-    // letter-spacing: 8px;
-    // color: #fff;
-    // // top: -48px;
-    // position: relative;
-    // left: 16%;
-    // display: flex;
-    // justify-content: start;
-    // align-items: end;
-  }
-
-  .hero-svg-wrapper .text a {
-    // @extend %work-links;
-    justify-self: center;
-    align-self: end;
-    // padding: 0;
-    // font-size: 1em;
-    // text-decoration: none;
-    text-align: center;
-  }
-
-  // ABOUT DESK TOP SECTION
-  .about {
-    height: 100vh;
-  }
-  .abt-content {
-    display: none;
-  }
-
-  .abt-dsk-content {
-    // background-image: url("../img/about-lrg-font.png");
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    display: block;
-    height: 72vh;
-  }
-
-  .abt-dsk-elem {
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
-
-  .abt-dsk-elem img {
-    grid-column: 1;
-    grid-row: 1;
-
-    justify-self: center;
-    align-self: end;
-    width: 72%;
-    height: 72%;
-    box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.45);
-    z-index: 10;
-  }
-
-  .abt-dsk-elem h1 {
-    text-transform: uppercase;
-    margin: 0;
-    padding: 0 0 -1em 0;
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    justify-self: center;
-    align-self: start;
-    font-size: 27rem;
-    opacity: 0.05;
-    z-index: 2;
-  }
-
-  .abt-dsk-para {
-    padding-left: 9em;
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: center;
-    align-self: center;
-    z-index: 3;
-  }
-
-  .abt-dsk-para span {
-    text-transform: uppercase;
-    font-size: 4.5em;
-    font-weight: 600;
-    align-self: end;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.45);
-  }
-  // 2px 2px 8px #FF0000
-  .abt-dsk-para p {
-    text-indent: 1em;
-  }
-
-  .abt-link-dsk {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: end;
-    justify-self: start;
-  }
-
-  // --------------------- DESKTOP SERVICE ----------------- //
-
-  .serv-content {
-    display: none;
-  }
-
-  .services {
-    height: 81vh;
-  }
-  .serv-dsk-cont {
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-  }
-
-  .serv-dsk-titl {
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    z-index: 3;
-    align-self: start;
-  }
-
-  .serv-dsk-titl h1 {
-    text-transform: uppercase;
-    margin: 0;
-    font-size: 27rem;
-    opacity: 0.05;
-  }
-
-  .serv-dsk-cont .dsk-serv-bar {
-    margin: 6rem 4rem 0;
-    background-color: $drk-color-2;
-    box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    // box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
-    //   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-    // border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 4;
-  }
-
-  .serv-dsk-cont .dsk-serv-bar:nth-of-type(2) {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: center;
-    background-image: url("../img/serv-icon-7.png");
-  }
-
-  .serv-dsk-cont .dsk-serv-bar:nth-of-type(3) {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: center;
-    background-image: url("../img/serv-icon-9.png");
-  }
-
-  .serv-dsk-cont .dsk-serv-bar:nth-of-type(4) {
-    grid-column: 3;
-    grid-row: 1;
-    align-self: center;
-    background-image: url("../img/serv-icon-8.png");
-  }
-
-  .dsk-serv-bar img {
-    width: 9em;
-    align-self: start;
-  }
-
-  .dsk-over-info {
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // border-radius: 27px;
-  }
-
-  .dsk-over-info h3 {
-    margin: 0;
-    font-size: 4vmin;
-  }
-
-  .dsk-over-info p {
-    margin: 0;
-    // font-size: 1.3em;
-    padding: 1rem;
-  }
-
-  // PROJECTS - DESKTOP ------------------ //
-
-  .work {
-    height: 150vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 0.5fr repeat(2, 1fr);
-    margin: 0 12em;
-  }
-
-  .wrk-content {
-    z-index: 99;
-  }
-
-  .wrk-brand-sec-title {
-    display: none;
-  }
-
-  // .prj-one .wrk-overlay {
-  //   z-index: 100;
-  // }
-
-  .wrk-titl {
-    margin-right: -9em;
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    justify-self: end;
-    z-index: 3;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-  }
-
-  .wrk-titl h1 {
-    text-transform: uppercase;
-    margin: 0;
-    font-size: 27rem;
-    opacity: 0.05;
-    z-index: 3;
-  }
-
-  .prj-one {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .prj-two {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .prj-three {
-    grid-column: 1;
-    grid-row: 3;
-  }
-
-  .prj-four {
-    grid-column: 2;
-    grid-row: 3;
-  }
-
-  .prj-one .wrk-content,
-  .prj-two .wrk-content,
-  .prj-three .wrk-content,
-  .prj-four .wrk-content {
-    z-index: 4;
-  }
-
-  .wrk-over-cont {
-    display: grid;
-    grid-template-columns: 0.75fr 1.5fr 0.75fr;
-    grid-template-rows: auto;
-  }
-  // .prj-header {
-  //   display: grid;
-  //   grid-template-columns: 0.75fr 1.5fr 0.75fr;
-  //   grid-template-rows: auto;
-  //   // justify-self: center;
-  // }
-
-  // .prj-hero-img {
-  //   grid-column: 1;
-  //   grid-row: 1;
-  // }
-
-  .wrk-over-cont img {
-    grid-column: 1 / span 3;
-    grid-row: 1;
-    align-self: center;
-    justify-self: center;
-    // justify-self: center;
-    height: 72vh;
-    // box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.45);
-  }
-
-  .prj-hero-over-grd {
-    height: 100%;
-    grid-column: 1 / span 3;
-    grid-row: 1;
-    align-self: center;
-    // background: rgb(29, 36, 32);
-    // background: rgb(29, 36, 32);
-    // background: linear-gradient(
-    //   0deg,
-    //   rgba(29, 36, 32, 0.9) 36%,
-    //   rgba(254, 254, 254, 0) 100%
-    // );
-    // z-index: 5;
-    // opacity: 0.9;
-  }
-
-  .prj-hero-title-over {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: end;
-    // z-index: 6;
-    // display: fle;
-  }
-
-  .dsk-prj-over-info {
-    grid-column: 3;
-    grid-row: 2;
-    justify-self: start;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: start;
-
-    // border: 1px solid $fifth-color;
-    // box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.45);
-    // overflow-y: hidden;
-  }
-
-  #sticky {
-    margin-left: 2rem;
-    display: block;
-    position: sticky;
-    position: -webkit-sticky;
-    // background: lime;
-    width: 72%;
-    height: 54vh;
-    top: 70px;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 1fr repeat(2, 0.5fr);
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // box-shadow: 0 0 6px lime;
-    // color: #000;
-  }
-
-  #sticky a:hover {
-    color: $second-color;
-  }
-
-  .dsk-prj-over-info ul {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center;
-    text-align: left;
-  }
-
-  .dsk-vst-syt {
-    padding: 0;
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: start;
-    text-align: left;
-  }
-
-  .work-closebtn-dsk {
-    grid-column: 1;
-    grid-row: 3;
-    justify-self: start;
-  }
-
-  .mbl-prj-over-info {
-    display: none;
-  }
-
-  .wrk-over-cont ul {
-    justify-self: start;
-    // margin-top: 5em;
-
-    // justify-self: center;
-    // align-self: center;
-  }
-
-  .vst-syt {
-    margin-top: 2em;
-    // grid-column: 3;
-    // grid-row: 1;
-    // align-self: end;
-    // justify-self: center;
-    // width: 100%;
-  }
-
-  .prj-smpl {
-    grid-column: 2;
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: 0.75fr 1.5fr 0.75fr;
-    grid-template-rows: auto;
-    // justify-self: center;
-  }
-
-  .intro-text {
-    grid-column: 1 / span 3;
-    grid-row: 1;
-    display: grid;
-
-    grid-template-columns: 1.25fr 0.5fr 1.25fr;
-    grid-template-rows: auto;
-  }
-
-  .intro-text h3 {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: start;
-  }
-
-  .intro-text p {
-    grid-column: 2 / span 2;
-    grid-row: 1;
-  }
-
-  .img-gal {
-    height: 360vh;
-    grid-column: 1 / span 3;
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-  }
-
-  .prj-sld:nth-of-type(1) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .prj-sld:nth-of-type(2) {
-    grid-column: 2 / span 2;
-    grid-row: 1;
-    align-self: start;
-    margin-left: 0.5em;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  .prj-sld:nth-of-type(2) h3 {
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    justify-self: end;
-  }
-
-  .prj-sld:nth-of-type(2) p {
-    text-align: right;
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    align-self: center;
-    justify-self: end;
-  }
-
-  // .prj-dsk-sld:nth-of-type(2) img {
-  //   width: 100%;
-  // }
-
-  .prj-sld:nth-of-type(3) {
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: start;
-  }
-
-  .prj-sld:nth-of-type(4) {
-    grid-column: 2 / span 2;
-    grid-row: 2;
-    align-self: end;
-    justify-self: center;
-  }
-
-  .prj-sld:nth-of-type(4) h2 {
-    font-size: 9rem;
-    writing-mode: vertical-rl;
-    text-orientation: sideways;
-  }
-
-  .prj-sld:nth-of-type(5) {
-    margin: 0;
-    width: 36%;
-    grid-column: 3;
-    grid-row: 2 / span 2;
-    justify-self: center;
-    align-self: center;
-  }
-
-  .prj-sld:nth-of-type(6) {
-    margin: 0;
-    width: 72%;
-    grid-column: 2;
-    grid-row: 2 / span 2;
-    justify-self: center;
-    align-self: center;
-  }
-
-  .prj-sld:nth-of-type(7) {
-    grid-column: 1;
-    grid-row: 3;
-    align-self: end;
-  }
-
-  .prj-sld:nth-of-type(7) img {
-    width: 25rem;
-  }
-  .prj-sld:nth-of-type(8) {
-    grid-column: 3;
-    grid-row: 3;
-    align-self: end;
-  }
-
-  .prj-sld:nth-of-type(9) {
-    display: block;
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    justify-self: center;
-    align-self: end;
-  }
-
-  .prj-sld:nth-of-type(9) img {
-    height: 100%;
-    width: 100%;
-  }
-
-  .prj-sld:nth-of-type(10) {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-    justify-self: end;
-    align-self: center;
-  }
-
-  .prj-sld:nth-of-type(11) {
-    grid-column: 2;
-    grid-row: 3;
-    align-self: end;
-  }
-
-  .prj-sld:nth-of-type(12) {
-    grid-column: 1;
-    grid-row: 2 / span 2;
-    align-self: center;
-  }
-
-  .solu-text {
-    grid-column: 2;
-    grid-row: 3;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
-
-  .strt-prj {
-    grid-column: 2;
-    grid-row: 4;
-  }
-
-  .work-closebtn-mbl {
-    display: none;
-  }
-
-  .work-closebtn-dsk .outer {
-    display: flex;
-    flex-direction: row;
-  }
-  // CONTACT - DESKTOP ------------------ //
-
-  #contact-form .container {
-    padding: 0 1.5em;
-    width: 72%;
-  }
-
-  .contact {
-    margin: 0 12em;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-  }
-
-  .contact img {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: start;
-    align-self: center;
-  }
-
-  .cnt-dsk-title {
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    align-self: start;
-    z-index: 2;
-  }
-
-  .cnt-dsk-title h1 {
-    text-transform: uppercase;
-    margin: 0;
-    font-size: 27rem;
-    opacity: 0.05;
-  }
-
-  .contact .container {
-    // margin: 0 6em;
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: start;
-    align-self: end;
-    z-index: 3;
-  }
-
-  .footer {
-    margin: 6em 0 0;
-    height: 50vh;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    // grid-template-rows: 0.5fr 1fr;
-    grid-template-rows: auto;
-
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: center;
-    // align-items: center;
-  }
-
-  .foot-logo {
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    justify-self: center;
-  }
-
-  .foot-list {
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    justify-self: center;
-  }
-
-  .foot-link {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-
-  .foot-soc {
-    grid-column: 1 / span 2;
-    grid-row: 3;
-    justify-self: center;
-  }
-
-  .copy-wrt {
-    grid-column: 1 / span 2;
-    grid-row: 4;
-    justify-self: center;
-  }
-  // .hero-content {
-  //   grid-column: 1;
-  //   grid-row: 1;
-  // }
-
-  // .hero-filter {
-  //   grid-column: 1 / span 2;
-  //   grid-row: 1;
-  // }
-
-  // .hero-vid {
-  //   grid-column: 2;
-  //   grid-row: 1;
-  // }
-}
-
-/* 
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-*/
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-  //CSS
-
-  // .hero-sec {
-  //   display: grid;
-  //   grid-template-columns: repeat(2, 1fr);
-  //   grid-template-rows: auto;
-  // }
-
-  // .cursor,
-  // .cursor2,
-  // .cursor3 {
-  //   display: block;
-  // }
-
-  // .wrk-display {
-  //   height: 200vh;
-  // }
-}
-
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 800px) and (max-width: 1024px) {
-  //CSS
-}
-
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  //CSS
-}
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {
-  //CSS
-}
-
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-
-@media (min-width: 360px) and (max-width: 480px) {
-  //CSS
-}
-
-@media (min-width: 320px) and (max-width: 360px) {
-  //CSS
-  .contact {
-    height: 162vh;
-  }
-}
-
-@media (min-height: 641px) and (max-height: 740px) {
-  //CSS
-  .contact {
-    height: 130vh;
-  }
-}
-
-/* #Media
-================================================== */
-
-@media (max-width: 991px) {
-}
-
-@media (max-width: 767px) {
-  // .case-study-wrapper .case-study-name a {
-  // 	// font-size: 20px;
-
-  // }
-  // .case-study-images li .hero-number-back{
-  // 	// font-size: 32vw;
-  // }
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-}
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-}
-
-@media screen and (max-height: 450px) {
-  .overlay a {
-    font-size: 20px;
-  }
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-
-  .abt-overlay a {
-    font-size: 20px;
-  }
-  .abt-overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-
-/* Float four columns side by side */
-// .column {
-//   float: left;
-//   width: 25%;
-//   padding: 0;
-// }
-
-/* Remove extra left and right margins, due to padding */
-// .row {margin: 0 -5px;}
-
-/* Clear floats after the columns */
-// .row:after {
-//   content: "";
-//   display: table;
-//   clear: both;
-// }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirjin Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Spartan:wght@300;600;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+        <div>
+            
+            <a href="#navigation" class="nav-trigger">
+                <span></span>
+            </a>
+        </div>
+
+        <nav class="nav-container" id="navigation">
+            <header>
+                <h2>Navigation</h2>
+            </header>
+
+            <ul class="nav">
+                <li><a href="#main-hero"><span>h</span><span>o</span><span>m</span><span>e</span></a></li>
+
+                <li><a href="#projects"><span>w</span><span>o</span><span>r</span><span>k</span></a>
+                </li>
+                <li><a href="#abt"><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span></a></li>
+
+                <li><a
+                        href="#projects"><span>c</span><span>l</span><span>i</span><span>e</span><span>n</span><span>t</span><span>s</span></a>
+                </li>
+                <li><a
+                        href="#contact-form"><span>c</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
+                </li>
+                <li><a
+                        href="#serv"><span>s</span><span>e</span><span>r</span><span>v</span><span>i</span><span>c</span><span>e</span><span>s</span></a>
+                </li>
+
+
+            </ul>
+        </nav>
+
+        <div class="overlay"></div> <!-- improve main element 3d movement -->
+    </header>
+
+    <main>
+        <section class="hero-sec" id="main-hero">
+            <div class="hero-content">
+
+                <div class="name-logo">
+                    <img src="img/logo-5.png" alt="">
+                </div>
+
+                <div class="port-title">
+                    <a href="#projects">portfolio</a>
+                </div>
+                <div class="animated-title">
+                    <div class="text-top">
+                      <div>
+                        <span>Hello,</span>
+                        <span class="int-grt">my name is,</span>
+                        <span class="hero-name">Shargene.</span>
+                      </div>
+                    </div>
+                    <div class="text-bottom">
+                      <div class="job-tytl">
+                        <p>I am a </p>
+                        <p class="type-text" >frontend developer.</p> 
+                        <!-- <a href="#contact-form"> Contact</a>
+                        <a href="#projects"> Work</a> -->
+                      </div>
+                
+                    </div>
+                  </div>
+                  <div class="hero-link">
+                    <div class="hero-svg-wrapper">
+                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                              <rect class="shape" height="60" width="275" />
+                              <div class="text"><a href="#contact-form">contact</a></div>
+                            </svg>
+                          </div>
+
+                          <div class="hero-svg-wrapper">
+                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                              <rect class="shape" height="60" width="275" />
+                              <div class="text"><a href="#projects">work</a></div>
+                            </svg>
+                          </div>
+                        </div>
+                <div id="scroll-down" class="demo">
+
+                    <a href="#abt"><span></span></a>
+                </div>
+
+            </div>
+
+            <!-- <div class="menu-dsk-titl"><h5>menu</h5></div> -->
+            <div class="hero-filter"></div>
+
+            <video autoplay muted loop id="myVideo" class="hero-vid">
+                <source src="vid2/Isolated-2.mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </section>
+
+
+        <section  class="about" id="abt">
+            <div  class="abt-content show-on-scroll">
+                <div class="abt-filter card-filter"></div>
+                <div class="abt-info">
+                    <span class="abt-link span-title" style="cursor:pointer" onclick="abtOpenNav()">
+                  <h5>about</h5> 
+                    </span>
+                </div>
+            </div>
+
+            <div class="abt-dsk-content ">
+                <div class="abt-dsk-elem">
+                    <img src="img/about-sec-card-2.jpg" alt=""> 
+                    <!-- <div class="abt-dsk-desc "> -->
+                        <h1>About</h1>
+                        <div class="abt-dsk-para show-on-scroll text-fade-left">
+                            <span>about</span>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, pariatur laboriosam est voluptatibus odio ad impedit nemo suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam unde natus error vero? Ad, fugit magnam. Pariatur ipsam tempore aut quos iure maiores consequuntur inventore?</p>
+                        </div>
+                        <span style="cursor:pointer" onclick="abtOpenNav()" class="abt-link-dsk">
+                            <h5>learn more</h5> 
+                              </span>
+                       
+                    <!-- </div> -->
+                </div>
+                
+            </div>
+
+            <div id="abtNav" class="abt-overlay">
+
+                <div class="abt-over-cnt-head">
+                    <div class="abt-brand-name"><a href="#main-hero" onclick="abtCloseNav()">Shargene</a> </div>
+                    <div class="abt-brand-sec-title"> <a href="#abt" onclick="abtCloseNav()">about</a></div>
+                </div>
+             
+
+                <div class="abt-overlay-content">
+
+                <div class="grt-hed">  <p> Designer & developer devoted to
+                    crafting minimal web experiences
+                    that people and companies love.</p>   </div>
+                
+
+                    <div class="abt-prof-card">
+                        <!-- <div class="abt-ovly-grd"></div> -->
+                        <div class="abt-prof-card-img"></div>
+                        <div class="abt-ovly-text">
+                          
+                          <h3 class="h3-title">my story</h3>
+                       
+                          <!-- <button>Hire me</button> -->
+                        </div>
+                      </div>
+              
+
+                
+                    <div class="skill">
+                        <p class="p-cont">   I provide my advice from the graphic design phase in order to offer an experience consistent
+                            with the objectives of the project.</p>
+                        <p class="p-cont">Developer and integrator WordPress specialist in Bordeaux,
+                            I work most often with Art Directors and web studios.
+
+                            With my years in an agency and still so passionate, I put my technical skills at the service
+                            of
+                            your creative ideas.
+
+                            I provide my advice from the graphic design phase in order to offer an experience consistent
+                            with the objectives of the project.</p>
+                        <h3 class="h3-title">languages</h3>
+                        <ul >
+                            <li>html</li>
+                            <li>css</li>
+                            <li>scss</li>
+                            <li>javascript</li>
+                        </ul>
+                        <h3 class="h3-title">design && 3D</h3>
+                        <ul>
+                            <li>photoshop</li>
+                            <li>illustrator</li>
+                            <li>autocad</li>
+                            <li>revit</li>
+                            <li>sketchup</li>
+                        </ul>
+
+                        <h3 class="h3-title">hobbies</h3>
+                        <ul>
+                            <li>architecture</li>
+                            <li>playing/coaching soccer</li>
+                            <li>music</li>
+                            <li>dance parties and playing monster and knights </li>
+                            <li>with my kids</li>
+                            <li>(I'm always the monster)</li>
+                        </ul>
+                    </div>
+
+                    <a href="javascript:void(0)" class="abt-closebtn" onclick="abtCloseNav()">
+                        <div class="outer">
+                            <div class="inner">
+                                <label>&#8592;</label>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+
+
+        </section>
+
+
+        <section class="services " id="serv">
+<div class="serv-dsk-cont">
+
+    <div class="serv-dsk-titl"><h1>services</h1></div>
+    
+        <div class="dsk-serv-bar show-on-scroll text-fade-bottom">
+            <div class="over-enter">
+                <!-- <img src="img/serv-icon-7.png" alt=""> -->
+              
+            </div>
+            <div class="dsk-over-info card-filter">
+                
+                <h3 class="h3-title">design</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+                    enim ab atque nemo
+                    perferendis ullam, nobis animi et iste architecto similique dolorum sed suscipit quasi!
+                    Perspiciatis vel quidem obcaecati praesentium.</p>
+                
+                
+                    
+            </div>
+        </div>
+        <div class="dsk-serv-bar show-on-scroll text-fade-bottom">
+            <div class="over-enter">
+                <!-- <img src="img/serv-icon-8.png" alt=""> -->
+              
+            </div>
+            <div class="dsk-over-info card-filter">
+                
+                <h3 class="h3-title">design</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+                    enim ab atque nemo
+                    perferendis ullam, nobis animi et iste architecto similique dolorum sed suscipit quasi!
+                    Perspiciatis vel quidem obcaecati praesentium.</p>
+                
+                
+                    
+            </div>
+        </div>
+
+        <div class="dsk-serv-bar show-on-scroll text-fade-bottom">
+            <div class="over-enter">
+                <!-- <img src="img/serv-icon-9.png" alt=""> -->
+              
+            </div>
+            <div class="dsk-over-info card-filter">
+                
+                <h3 class="h3-title">design</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+                    enim ab atque nemo
+                    perferendis ullam, nobis animi et iste architecto similique dolorum sed suscipit quasi!
+                    Perspiciatis vel quidem obcaecati praesentium.</p>
+                
+                
+                    
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+            <div class="serv-content show-on-scroll ">
+               
+                <div class="serv-filter card-filter"> </div>
+                <div class="serv-info">
+                    <span class="serv-link span-title" style="cursor:pointer" onclick="servOpenNav()">
+                       <h5>Services</h5> 
+                    </span>
+               
+                </div>
+            </div>
+
+            <div id="servNav" class="serv-overlay">
+
+
+                <div class="serv-over-cnt-head">
+                    <div class="serv-brand-name"><a href="#main-hero" onclick="servCloseNav()">Shargene</a> </div>
+                    <div class="serv-brand-sec-title"> <a href="#servNav" onclick="servCloseNav()">service</a></div>
+                </div>
+                <div class="serv-over-cont">
+                    <div class="serv-bar">
+                        <div class="over-enter">
+                            <img src="img/serv-icon-7.png" alt="">
+                          
+                        </div>
+                        <div class="over-info">
+                            <div class="over-info-txt"> 
+                            <h3 class="h3-title">design</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+                                enim ab atque nemo
+                                perferendis ullam, nobis animi et iste architecto similique dolorum sed suscipit quasi!
+                                Perspiciatis vel quidem obcaecati praesentium.</p>
+                            </div> 
+                                <h3 class="cross-line">&#10011;</h3>
+                                <div id="line_l" class="line"></div>
+                                
+                        </div>
+                    </div>
+                    <div class="serv-bar">
+                        <div class="over-enter">
+                            <img src="img/serv-icon-8.png" alt="">
+                          
+                        </div>
+                        <div class="over-info">
+                            <div class="over-info-txt"> 
+                            <h3 class="h3-title">design</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+                                enim ab atque nemo
+                                perferendis ullam, nobis animi et iste architecto similique dolorum sed suscipit quasi!
+                                Perspiciatis vel quidem obcaecati praesentium.</p>
+                            </div> 
+                                <h3 class="cross-line">&#10011;</h3>
+                                <div id="line_l" class="line"></div>
+                                
+                        </div>
+                    </div>
+
+                    <div class="serv-bar">
+                        <div class="over-enter">
+                            <img src="img/serv-icon-9.png" alt="">
+                          
+                        </div>
+                        <div class="over-info">
+                            <div class="over-info-txt"> 
+                            <h3 class="h3-title">design</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+                                enim ab atque nemo
+                                perferendis ullam, nobis animi et iste architecto similique dolorum sed suscipit quasi!
+                                Perspiciatis vel quidem obcaecati praesentium.</p>
+                            </div> 
+                                <h3 class="cross-line">&#10011;</h3>
+                                <div id="line_l" class="line"></div>
+                                
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <a href="javascript:void(0)" class="serv-closebtn" onclick="servCloseNav()">
+                    <div class="outer">
+                        <div class="inner">
+                            <label>&#8592;</label>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+
+        </section>
+
+        <section class="work" id="projects">
+
+            <div class="wrk-titl">
+                <h1>work</h1>
+            </div>
+
+            <div class="prj-one">   
+                <div class="wrk-content show-on-scroll ">             
+                    <div class="wrk-filter card-filter"> </div>
+                    <div class="wrk-info">                  
+                        <span class="wrk-link span-title" style="cursor:pointer" onclick="workOpenNav()">
+                           <h5> ZZ's <br> Produce</h5>
+                            <h5>+</h5>
+                        </span>            
+                    </div>
+                </div>
+            </div>
+
+            <div id="workNav" class="wrk-overlay">
+                <div class="wrk-over-cnt-head">
+                    <div class="wrk-brand-name">
+                        <a href="#main-hero" onclick="workCloseNav()">Shargene</a> 
+                    </div>     
+                    <div class="wrk-brand-sec-title"> <a href="#projects" onclick="workCloseNav()">&#8592;  projects</a>
+                    </div>               
+                </div>
+
+                <div class="wrk-over-cont">
+                
+                    <div class="prj-hero-title-over">
+                        <h1>ZZ's Produce</h1>                   
+                        <p>Local family owned international grocery store providing.</p>
+                    </div>
+                    <img src="img/zz-hero-img-prj-3.jpg" alt="">
+                    <div class="prj-hero-over-grd"></div>
+                           
+                    <div class="dsk-prj-over-info" id="sticky">
+                        <ul>
+                            <li>Client:</li>
+                            <li>ZZ's Produce</li>
+                            <li>Industry:</li>
+                            <li>Grocery Store</li>     
+                            <li>Role:</li>
+                            <li>UX/UI + Developer</li>
+                        </ul>
+                        <a class= "dsk-vst-syt" href="http://zzs-produce.com/">visit site </a>
+
+                        <a href="javascript:void(0)" class="work-closebtn-dsk" onclick="workCloseNav()">
+                            <h3> &#8592;  projects</h3>                           
+                        </a>
+                    </div>
+
+                    <div class="mbl-prj-over-info">
+                        <ul>
+                            <li>Client:</li>
+                            <li>ZZ's Produce</li>
+                            <li>Industry:</li>
+                            <li>Grocery Store</li>     
+                            <li>Role:</li>
+                            <li>UX/UI + Developer</li>
+                        </ul>
+                        <a class= "vst-syt" href="http://zzs-produce.com/">visit site </a>
+                    </div>
+                           
+                    <div class="prj-smpl">
+                        <div class="intro-text">
+                            <h3 class="h3-title">program </h3>
+                            <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas impedit sapiente, dignissimos obcaecati quibusdam praesentium, deleniti necessitatibus veritatis, itaque animi culpa eligendi hic deserunt et exercitationem! Ipsa accusamus aut rem reprehenderit vel vitae, velit iure ex explicabo ullam enim inventore odit pariatur eveniet impedit eaque in a itaque accusantium ad.</p>
+                        </div>
+
+                        <div class="img-gal">    
+                            
+                            <!-- // PRJ-SLD 1 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left"> 
+                                <img src="img/ZZ-DSK-COLOR-WIREFRAM.png" alt=""> 
+                            </div>
+
+                            <!-- // PRJ-SLD 2 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left"> 
+                                <div class="solu-text  ">
+                                    <h3 class="show-on-scroll h3-title" >solution: </h3>
+                                    <p  class="show-on-scroll" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas impedit sapiente, dignissimos obcaecati quibusdam praesentium, deleniti necessitatibus veritatis, itaque animi culpa eligendi hic deserunt et exercitationem! Ipsa accusamus aut rem reprehenderit vel vitae, velit iure ex explicabo ullam enim inventore odit pariatur eveniet impedit eaque in a itaque accusantium ad.</p>
+                                </div>
+    
+                            </div>
+
+                            <!-- // PRJ-SLD 3 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left">  
+                                <img src="img/full-site-img-1.jpg" alt=""> 
+                            </div>
+
+                            <!-- // PRJ-SLD 4 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left">  
+                                <h2>Mobile</h2>
+                            </div>
+
+                            <!-- // PRJ-SLD 5 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left"> 
+                                <img src="img/mobile-full-img-1.jpg" alt="">
+                            </div>
+
+                            <!-- // PRJ-SLD 6 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left"> 
+                                <img src="img/ZZ-WIRE-COLOR-2.png" alt=""> 
+                            </div>
+
+                            <!-- // PRJ-SLD 7 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left">  
+                                <img src="img/zz-mbl-hero-crd.jpg" alt="">
+                            </div>
+
+                            <!-- // PRJ-SLD 8 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left">  
+                                <img src="img/zz-mbl-abt-crd.jpg" alt="">
+                            </div>
+
+                            <!-- // PRJ-SLD 9 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left">  
+                                <img src="img/zz-desk-img-about-2.jpg" alt="">
+                            </div>
+
+                            <!-- // PRJ-SLD 10 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left">  
+                                <img src="img/full-site-img-1.jpg" alt=""> 
+                            </div>
+
+                                <!-- // PRJ-SLD 11 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left">  
+                                <img src="img/zz-mbl-cat-crd.jpg" alt="">
+                            </div>
+
+                                <!-- // PRJ-SLD 12 -->
+                            <div class="prj-sld  show-on-scroll text-fade-left">  
+                                <img src="img/wireframe-sketch-test-7.png" alt="">
+                            </div>
+                                                                            
+                        </div>
+
+                        
+                        <div class="strt-prj">
+                            Ready to create! <br>
+                            <a href="#contact-form" onclick="workCloseNav()">Let's start a project.</a>
+                        </div>
+
+                    </div>
+
+                    <a href="javascript:void(0)" class="work-closebtn-mbl" onclick="workCloseNav()">
+                        <div class="outer">
+                            <div class="inner">
+                                <label>&#8592;</label>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+    <!-- </div> -->
+
+    <!-- // ---------------------------------- PROJECT 2 ------------------------- // -->
+      
+    <div class="prj-two">    
+        <div class="wrk-content show-on-scroll ">             
+            <div class="wrk-filter card-filter"> </div>
+            <div class="wrk-info">                  
+                <span class="wrk-link span-title" style="cursor:pointer" onclick="workTwoOpenNav()">
+                    <h5>Man of Letters</h5> 
+                    <h5>+</h5>
+                </span>            
+            </div>
+        </div>
+    </div>
+
+
+    <div id="prjTwo"class="wrk-overlay">
+        <div class="wrk-over-cnt-head">
+            <div class="wrk-brand-name">
+                <a href="#main-hero" onclick="workCloseNav()">Shargene</a> 
+            </div>                    
+        </div>
+
+        <div class="wrk-over-cont">
+        
+            <div class="prj-hero-title-over">
+                <h1>Man of Letters</h1>                   
+                <p>Local family owned international grocery store providing.</p>
+            </div>
+            <img src="img/mol-hero-img-prj-3.jpg" alt="">
+            <div class="prj-hero-over-grd"></div>
+                   
+            <div class="dsk-prj-over-info" id="sticky">
+                <ul>
+                    <li>Client:</li>
+                    <li>Man of Letters</li>
+                    <li>Industry:</li>
+                    <li>Spirituality</li>     
+                    <li>Role:</li>
+                    <li>Content, Design, UX/UI, Developer</li>
+                </ul>
+                <a class= "dsk-vst-syt" href="http://zzs-produce.com/">visit site </a>
+
+                <a href="javascript:void(0)" class="work-closebtn-dsk" onclick="workTwoCloseNav()">
+                    <h3> &#8592;  projects</h3>                           
+                </a>
+            </div>
+
+            <div class="mbl-prj-over-info">
+                <ul>
+                    <li>Client:</li>
+                    <li>Man of Letters</li>
+                    <li>Industry:</li>
+                    <li>Spirituality</li>      
+                    <li>Role:</li>
+                    <li>Content, Design, UX/UI, Developer</li>
+                </ul>
+                <a class= "vst-syt" href="http://zzs-produce.com/">visit site </a>
+            </div>
+                   
+            <div class="prj-smpl">
+                <div class="intro-text">
+                    <h3 class="h3-title">program </h3>
+                    <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas impedit sapiente, dignissimos obcaecati quibusdam praesentium, deleniti necessitatibus veritatis, itaque animi culpa eligendi hic deserunt et exercitationem! Ipsa accusamus aut rem reprehenderit vel vitae, velit iure ex explicabo ullam enim inventore odit pariatur eveniet impedit eaque in a itaque accusantium ad.</p>
+                </div>
+
+                <div class="img-gal">    
+                    
+                    <!-- // PRJ-SLD 1 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left"> 
+                        <img src="img/wireframe-test-2.jpg" alt=""> 
+                    </div>
+
+                    <!-- // PRJ-SLD 2 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left"> 
+                        <div class="solu-text  ">
+                            <h3 class="show-on-scroll h3-title" >solution: </h3>
+                            <p  class="show-on-scroll" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas impedit sapiente, dignissimos obcaecati quibusdam praesentium, deleniti necessitatibus veritatis, itaque animi culpa eligendi hic deserunt et exercitationem! Ipsa accusamus aut rem reprehenderit vel vitae, velit iure ex explicabo ullam enim inventore odit pariatur eveniet impedit eaque in a itaque accusantium ad.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- // PRJ-SLD 3 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/full-site-img-1.jpg" alt=""> 
+                    </div>
+
+                    <!-- // PRJ-SLD 4 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <h2>Mobile</h2>
+                    </div>
+
+                    <!-- // PRJ-SLD 5 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left"> 
+                        <img src="img/MOL-mobile-full-img-1.jpg" alt="">
+                    </div>
+
+                    <!-- // PRJ-SLD 6 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left"> 
+                        <img src="img/MOL-COLOR-WIRE-2.png" alt=""> 
+                    </div>
+
+                    <!-- // PRJ-SLD 7 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/apple-12-test-9.png" alt="">
+                    </div>
+
+                    <!-- // PRJ-SLD 8 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/apple-12-test-9.png" alt="">
+                    </div>
+
+                    <!-- // PRJ-SLD 9 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/zz-desk-img-2.jpg" alt="">
+                    </div>
+
+                    <!-- // PRJ-SLD 10 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/full-site-img-1.jpg" alt=""> 
+                    </div>
+
+                        <!-- // PRJ-SLD 11 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/apple-12-test-9.png" alt="">
+                    </div>
+
+                        <!-- // PRJ-SLD 12 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/MOL-WIREFRAME-4.png" alt="">
+                    </div>
+                                                                    
+                </div>
+
+                
+                <div class="strt-prj">
+                    Ready to create! <br>
+                    <a href="#contact-form" onclick="workTwoCloseNav()">Let's start a project.</a>
+                </div>
+
+            </div>
+
+            <a href="javascript:void(0)" class="work-closebtn-mbl" onclick="workTwoCloseNav()">
+                <div class="outer">
+                    <div class="inner">
+                        <label>&#8592;</label>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+<!-- </div> -->
+
+
+
+
+    <!-- // ---------------------------------- PROJECT 3 ------------------------- // -->
+        
+
+    <div class="prj-three">   
+        <div class="wrk-content show-on-scroll ">             
+            <div class="wrk-filter card-filter"> </div>
+            <div class="wrk-info">                  
+                <span class="wrk-link span-title" style="cursor:pointer" onclick="workThreeOpenNav()">
+                    <h5>Arch Site</h5>
+                    <h5>+</h5>
+                </span>            
+            </div>
+        </div>
+    </div>
+
+       
+        <div id="prjThree" class="wrk-overlay">
+            <div class="wrk-over-cnt-head">
+                <div class="wrk-brand-name">
+                    <a href="#main-hero"  onclick="workThreeCloseNav()">Shargene</a> 
+                </div>                    
+            </div>
+
+            <div class="wrk-over-cont">
+            
+                <div class="prj-hero-title-over">
+                    <h1>Architecture Site</h1>                   
+                    <p>A personal project to design a site for a architectual firm.</p>
+                </div>
+                <img src="img/prize-3.jpg" alt="">
+                <div class="prj-hero-over-grd"></div>
+                       
+                <div class="dsk-prj-over-info" id="sticky">
+                    <ul>
+                        <li>Client:</li>
+                        <li>ZZ's Produce</li>
+                        <li>Industry:</li>
+                        <li>Grocery Store</li>     
+                        <li>Role:</li>
+                        <li>UX/UI + Developer</li>
+                    </ul>
+                    <a class= "dsk-vst-syt" href="http://zzs-produce.com/">visit site </a>
+
+                    <a href="javascript:void(0)" class="work-closebtn-dsk"  onclick="workThreeCloseNav()">
+                        <h3> &#8592;  projects</h3>                           
+                    </a>
+                </div>
+
+                <div class="mbl-prj-over-info">
+                    <ul>
+                        <li>Client:</li>
+                        <li>ZZ's Produce</li>
+                        <li>Industry:</li>
+                        <li>Grocery Store</li>     
+                        <li>Role:</li>
+                        <li>UX/UI + Developer</li>
+                    </ul>
+                    <a class= "vst-syt" href="http://zzs-produce.com/">visit site </a>
+                </div>
+                       
+                <div class="prj-smpl">
+                    <div class="intro-text">
+                        <h3 class="h3-title">program </h3>
+                        <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas impedit sapiente, dignissimos obcaecati quibusdam praesentium, deleniti necessitatibus veritatis, itaque animi culpa eligendi hic deserunt et exercitationem! Ipsa accusamus aut rem reprehenderit vel vitae, velit iure ex explicabo ullam enim inventore odit pariatur eveniet impedit eaque in a itaque accusantium ad.</p>
+                    </div>
+
+                    <div class="img-gal">    
+                        
+                        <!-- // PRJ-SLD 1 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left"> 
+                            <img src="img/wireframe-test-2.jpg" alt=""> 
+                        </div>
+
+                        <!-- // PRJ-SLD 2 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left"> 
+                            <div class="solu-text  ">
+                                <h3 class="show-on-scroll h3-title" >solution: </h3>
+                                <p  class="show-on-scroll" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas impedit sapiente, dignissimos obcaecati quibusdam praesentium, deleniti necessitatibus veritatis, itaque animi culpa eligendi hic deserunt et exercitationem! Ipsa accusamus aut rem reprehenderit vel vitae, velit iure ex explicabo ullam enim inventore odit pariatur eveniet impedit eaque in a itaque accusantium ad.</p>
+                            </div>
+
+                        </div>
+
+                        <!-- // PRJ-SLD 3 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                            <img src="img/full-site-img-1.jpg" alt=""> 
+                        </div>
+
+                        <!-- // PRJ-SLD 4 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                            <h2>Mobile</h2>
+                        </div>
+
+                        <!-- // PRJ-SLD 5 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left"> 
+                            <img src="img/mobile-full-img-1.jpg" alt="">
+                        </div>
+
+                        <!-- // PRJ-SLD 6 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left"> 
+                            <img src="img/ARCH-COLOR-WIRE-2.png" alt=""> 
+                        </div>
+
+                        <!-- // PRJ-SLD 7 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                            <img src="img/apple-12-test-9.png" alt="">
+                        </div>
+
+                        <!-- // PRJ-SLD 8 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                            <img src="img/apple-12-test-9.png" alt="">
+                        </div>
+
+                        <!-- // PRJ-SLD 9 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                            <img src="img/zz-desk-img-2.jpg" alt="">
+                        </div>
+
+                        <!-- // PRJ-SLD 10 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                            <img src="img/full-site-img-1.jpg" alt=""> 
+                        </div>
+
+                            <!-- // PRJ-SLD 11 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                            <img src="img/apple-12-test-9.png" alt="">
+                        </div>
+
+                              <!-- // PRJ-SLD 12 -->
+                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                            <img src="img/ARCH-WIREFRAME-2.png" alt="">
+                        </div>  
+                                                                        
+                    </div>
+
+                    
+                    <div class="strt-prj">
+                        Ready to create! <br>
+                        <a href="#contact-form" onclick="workCloseNav()">Let's start a project.</a>
+                    </div>
+
+                </div>
+
+                <a href="javascript:void(0)" class="work-closebtn-mbl"  onclick="workThreeCloseNav()">
+                    <div class="outer">
+                        <div class="inner">
+                            <label>&#8592;</label>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+
+<!-- // ---------------------------------- PROJECT 4 ------------------------- // -->
+
+
+<div class="prj-four">   
+    <div class="wrk-content show-on-scroll ">             
+        <div class="wrk-filter card-filter"> </div>
+        <div class="wrk-info">                  
+            <span class="wrk-link span-title" style="cursor:pointer"  onclick="workFourOpenNav()">
+                <h5>Author</h5>
+                 <h5>+</h5>
+             </span>           
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- <div class="prj-four">   
+        <div class="wrk-content show-on-scroll ">             
+            <div class="wrk-filter card-filter"> </div>
+            <div class="wrk-info">                  
+                <span class="wrk-link span-title" style="cursor:pointer"  onclick="workFourOpenNav()">
+                    <h5>Author</h5>
+                     <h5>+</h5>
+                 </span>           
+            </div>
+        </div>
+    </div> -->
+
+    
+    <div id="prjFour" class="wrk-overlay">
+        <div class="wrk-over-cnt-head">
+            <div class="wrk-brand-name">
+                <a href="#main-hero"  onclick="workFourCloseNav()">Shargene</a> 
+            </div>                    
+        </div>
+
+        <div class="wrk-over-cont">
+        
+            <div class="prj-hero-title-over">
+                <h1>ZZ's Produce</h1>                   
+                <p>Local family owned international grocery store providing.</p>
+            </div>
+            <img src="img/auth-card-cvr-2.jpg" alt="">
+            <div class="prj-hero-over-grd"></div>
+                   
+            <div class="dsk-prj-over-info" id="sticky">
+                <ul>
+                    <li>Client:</li>
+                    <li>Zana Zangana</li>
+                    <li>Industry:</li>
+                    <li>Author</li>     
+                    <li>Role:</li>
+                    <li>UX/UI + Developer</li>
+                </ul>
+                <a class= "dsk-vst-syt" href="http://zzs-produce.com/">visit site </a>
+
+                <a href="javascript:void(0)" class="work-closebtn-dsk"  onclick="workFourCloseNav()">
+                    <h3> &#8592;  projects</h3>                           
+                </a>
+            </div>
+
+            <div class="mbl-prj-over-info">
+                <ul>
+                    <li>Client:</li>
+                    <li>Zana Zangana</li>
+                    <li>Industry:</li>
+                    <li>Author</li>     
+                    <li>Role:</li>
+                    <li>UX/UI + Developer</li>
+                </ul>
+                <a class= "vst-syt" href="http://zzs-produce.com/">visit site </a>
+            </div>
+                   
+            <div class="prj-smpl">
+                <div class="intro-text">
+                    <h3 class="h3-title">program </h3>
+                    <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas impedit sapiente, dignissimos obcaecati quibusdam praesentium, deleniti necessitatibus veritatis, itaque animi culpa eligendi hic deserunt et exercitationem! Ipsa accusamus aut rem reprehenderit vel vitae, velit iure ex explicabo ullam enim inventore odit pariatur eveniet impedit eaque in a itaque accusantium ad.</p>
+                </div>
+
+                <div class="img-gal">    
+                    
+                    <!-- // PRJ-SLD 1 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left"> 
+                        <img src="img/wireframe-test-2.jpg" alt=""> 
+                    </div>
+
+                    <!-- // PRJ-SLD 2 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left"> 
+                        <div class="solu-text  ">
+                            <h3 class="show-on-scroll h3-title" >solution: </h3>
+                            <p  class="show-on-scroll" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas impedit sapiente, dignissimos obcaecati quibusdam praesentium, deleniti necessitatibus veritatis, itaque animi culpa eligendi hic deserunt et exercitationem! Ipsa accusamus aut rem reprehenderit vel vitae, velit iure ex explicabo ullam enim inventore odit pariatur eveniet impedit eaque in a itaque accusantium ad.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- // PRJ-SLD 3 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/full-site-img-1.jpg" alt=""> 
+                    </div>
+
+                    <!-- // PRJ-SLD 4 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <h2>Mobile</h2>
+                    </div>
+
+                    <!-- // PRJ-SLD 5 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left"> 
+                        <img src="img/mobile-full-img-1.jpg" alt="">
+                    </div>
+
+                    <!-- // PRJ-SLD 6 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left"> 
+                        <img src="img/ZANA-AUTH-CLR-WYR-2.png" alt=""> 
+                    </div>
+
+                    <!-- // PRJ-SLD 7 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/apple-12-test-9.png" alt="">
+                    </div>
+
+                    <!-- // PRJ-SLD 8 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/apple-12-test-9.png" alt="">
+                    </div>
+
+                    <!-- // PRJ-SLD 9 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/zz-desk-img-2.jpg" alt="">
+                    </div>
+
+                    <!-- // PRJ-SLD 10 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/full-site-img-1.jpg" alt=""> 
+                    </div>
+
+                        <!-- // PRJ-SLD 11 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <img src="img/apple-12-test-9.png" alt="">
+                    </div>
+
+                        <!-- // PRJ-SLD 12 -->
+                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                            <img src="img/ZANA-WIREFRAME-2.png" alt="">
+                    </div>  
+                                                                    
+                </div>
+
+                
+                <div class="strt-prj">
+                    Ready to create! <br>
+                    <a href="#contact-form" onclick="workCloseNav()">Let's start a project.</a>
+                </div>
+
+            </div>
+
+            <a href="javascript:void(0)" class="work-closebtn-mbl"  onclick="workFourCloseNav()">
+                <div class="outer">
+                    <div class="inner">
+                        <label>&#8592;</label>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    <!-- </div> -->
+
+
+ 
+
+        </section>
+
+
+       
+
+        <section class="contact" id="contact-form">
+            
+            <div class="cnt-dsk-title">
+                <h1>Contact</h1> 
+               </div>
+
+            <img src="img/contact-image-8.png" alt="">
+           
+            <!-- <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two
+                columns stack on top of each other instead of next to each other.</p> -->
+
+            <div class="container">
+                <form action="/action_page.php">
+                    <div class="row">
+                        <div class="name-info">
+                            <label for="fname">First Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Last Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="country">Country</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="country" name="country">
+                                <option value="usa">USA</option>
+                                <option value="canada">Canada</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="subject" name="subject" placeholder="Write something.."
+                                style="height:200px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+
+        <section class="footer">
+            <div class="foot-logo">
+                <a href="#main-hero"><img src="img/logo-5.png" alt=""></a>
+            </div>
+            <div class="foot-list">
+                <ul class="foot-link">
+                    <li>
+                        <!-- <a href="#abt">about</a> -->
+                        <div class="svg-wrapper">
+                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                              <rect class="shape" height="60" width="320" />
+                              <div class="text"><a href="#abt">about</a></div>
+                            </svg>
+                          </div>
+                    </li>
+                    <li>
+                        <div class="svg-wrapper">
+                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                              <rect class="shape" height="60" width="320" />
+                              <div class="text"><a href="#abt">services</a></div>
+                            </svg>
+                          </div>
+                    </li>
+                    <li>
+                        <div class="svg-wrapper">
+                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                              <rect class="shape" height="60" width="320" />
+                              <div class="text"><a href="#abt">projects</a></div>
+                            </svg>
+                          </div>
+                    </li>
+                    <li>
+                        <div class="svg-wrapper">
+                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                              <rect class="shape" height="60" width="320" />
+                              <div class="text"><a href="#abt">testemonials</a></div>
+                            </svg>
+                          </div>
+                    </li>
+                    <li>
+                        <div class="svg-wrapper">
+                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                              <rect class="shape" height="60" width="320" />
+                              <div class="text"><a href="#abt">contact</a></div>
+                            </svg>
+                          </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="foot-soc">
+                <a href="#" class="fa fa-google fa-2x"></a>
+                <a href="#" class="fa fa-linkedin fa-2x"></a>
+                <a href="#" class="fa fa-behance-square fa-2x"></a>
+            </div>
+
+            <div class="copy-wrt">
+                <p> Copyrite &#169; 2020 Shargene Zangana</p> 
+                <p> All rights reserved.</p>
+
+            </div>
+        </section>
+
+
+        <a href="#" id="scroll" style="display: none;"><span></span></a>
+
+
+    </main>
+
+
+
+    <script src="js/menu.js" type="text/javascript"></script>
+  
+
+
+</body>
+
+</html>
