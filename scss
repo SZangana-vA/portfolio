@@ -2923,6 +2923,11 @@ input[type="submit"]:hover {
     grid-template-columns: 0.75fr 1.5fr 0.75fr;
     grid-template-rows: auto;
   }
+
+  // .mol-logo img {
+  //   width: 10rem;
+  //   // height: 50%;
+  // }
   // .prj-header {
   //   display: grid;
   //   grid-template-columns: 0.75fr 1.5fr 0.75fr;
@@ -3148,9 +3153,9 @@ input[type="submit"]:hover {
 
   .prj-sld:nth-of-type(6) {
     margin: 0;
-    width: 72%;
+    // width: 50%;
     grid-column: 2;
-    grid-row: 2 / span 2;
+    grid-row: 1 / span 3;
     justify-self: center;
     align-self: center;
   }
@@ -3219,6 +3224,14 @@ input[type="submit"]:hover {
     grid-row: 2 / span 2;
     align-self: center;
   }
+
+  // .prj-sld:nth-of-type(13) {
+  //   width: 50%;
+  //   grid-column: 3;
+  //   grid-row: 2;
+  //   align-self: center;
+  //   justify-self: end;
+  // }
 
   .solu-text {
     grid-column: 2;
