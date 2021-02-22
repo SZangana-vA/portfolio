@@ -2185,14 +2185,15 @@ serv-over-cont:nth-child(3) {
 }
 
 .prj-sld:nth-of-type(6) {
-  width: 45%;
+  width: 54%;
   grid-column: 1;
   grid-row: 7;
   justify-self: start;
 }
 
 .prj-sld:nth-of-type(9) {
-  display: none;
+  grid-column: 1;
+  grid-row: 3;
 }
 
 .prj-sld:nth-of-type(10) {
@@ -2950,6 +2951,15 @@ input[type="submit"]:hover {
     // box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.45);
   }
 
+  // .mol-logo {
+  //   grid-column: 1;
+  //   grid-row: 1;
+  //   align-self: end;
+  //   justify-self: start;
+  //   // width: 3rem;
+  //   // height: 3rem;
+  // }
+
   .prj-hero-over-grd {
     height: 100%;
     grid-column: 1 / span 3;
@@ -3060,6 +3070,19 @@ input[type="submit"]:hover {
     grid-template-rows: auto;
     // justify-self: center;
   }
+  .mol-logo {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    justify-self: start;
+  }
+
+  .mol-logo img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 90%;
+  }
 
   .intro-text {
     grid-column: 1 / span 3;
@@ -3088,6 +3111,11 @@ input[type="submit"]:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
+  }
+
+  .prj-sld img {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .prj-sld:nth-of-type(1) {
@@ -3130,9 +3158,9 @@ input[type="submit"]:hover {
   }
 
   .prj-sld:nth-of-type(4) {
-    grid-column: 2 / span 2;
+    grid-column: 2 / span 3;
     grid-row: 2;
-    align-self: end;
+    align-self: center;
     justify-self: center;
   }
 
@@ -3193,12 +3221,12 @@ input[type="submit"]:hover {
 
   .prj-sld:nth-of-type(9) img {
     height: 100%;
-    width: 100%;
+    width: 90%;
   }
 
-  #prjTwo .prj-sld:nth-of-type(9) {
-    width: 72%;
-  }
+  // #prjTwo .prj-sld:nth-of-type(9) {
+  //   width: 72%;
+  // }
 
   .prj-sld:nth-of-type(10) {
     grid-column: 3;
@@ -3223,14 +3251,22 @@ input[type="submit"]:hover {
     grid-column: 1;
     grid-row: 2 / span 2;
     align-self: center;
+    justify-self: center;
+    width: 45%;
   }
 
   // .prj-sld:nth-of-type(13) {
-  //   width: 50%;
+  //   // width: 50%;
   //   grid-column: 3;
   //   grid-row: 2;
   //   align-self: center;
   //   justify-self: end;
+  // }
+  // .prj-sld:nth-of-type(13) img {
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   width: 72%;
+  //   height: 72%;
   // }
 
   .solu-text {
