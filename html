@@ -43,6 +43,7 @@
 
         <nav class="nav-container" id="navigation">
             <header>
+                <img src="img/logo-5.png" alt="">
                 <h2>Navigation</h2>
             </header>
 
@@ -52,16 +53,16 @@
                 <li><a href="#projects"><span>w</span><span>o</span><span>r</span><span>k</span></a>
                 </li>
                 <li><a href="#abt"><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span></a></li>
-
+<!-- 
                 <li><a
                         href="#projects"><span>c</span><span>l</span><span>i</span><span>e</span><span>n</span><span>t</span><span>s</span></a>
-                </li>
+                </li> -->
                 <li><a
                         href="#contact-form"><span>c</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
                 </li>
-                <li><a
+                <!-- <li><a
                         href="#serv"><span>s</span><span>e</span><span>r</span><span>v</span><span>i</span><span>c</span><span>e</span><span>s</span></a>
-                </li>
+                </li> -->
 
 
             </ul>
@@ -100,19 +101,17 @@
                     </div>
                   </div>
                   <div class="hero-link">
-                    <div class="hero-svg-wrapper">
-                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-                              <rect class="shape" height="60" width="275" />
-                              <div class="text"><a href="#contact-form">contact</a></div>
-                            </svg>
-                          </div>
+                    <div class="wrapper hm-lnk">
+                        <span class="square">
+                          <a class="first before after" href="#">Contact</a>
+                        </span>
+                      </div>
 
-                          <div class="hero-svg-wrapper">
-                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-                              <rect class="shape" height="60" width="275" />
-                              <div class="text"><a href="#projects">work</a></div>
-                            </svg>
-                          </div>
+                      <div class="wrapper hm-lnk">
+                        <span class="square">
+                          <a class="first before after" href="#">Projects</a>
+                        </span>
+                      </div>
                         </div>
                 <div id="scroll-down" class="demo">
 
@@ -410,7 +409,7 @@
         <section class="work" id="projects">
 
             <div class="wrk-titl">
-                <h1>work</h1>
+                <h1>projects</h1>
             </div>
 
             <div class="prj-one">   
@@ -460,7 +459,7 @@
                     </div>
 
                     <div class="mbl-prj-over-info">
-                        <ul>
+                        <ul class="prj-info-lst">
                             <li>Client:</li>
                             <li>ZZ's Produce</li>
                             <li>Industry:</li>
@@ -474,21 +473,31 @@
                     <div class="prj-smpl">
                         <div class="intro-text">
                             <h3 class="h3-title">program </h3>
-                            <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas impedit sapiente, dignissimos obcaecati quibusdam praesentium, deleniti necessitatibus veritatis, itaque animi culpa eligendi hic deserunt et exercitationem! Ipsa accusamus aut rem reprehenderit vel vitae, velit iure ex explicabo ullam enim inventore odit pariatur eveniet impedit eaque in a itaque accusantium ad.</p>
+                            <p >ZZ's Produce is a international mom-and-pop grocery store that offers produce and grocieres from around the world. Their pricipal belief is to provide global product at a afforadable price. They were in need of a site that would represent a clean and fresh feeling that represented thier stores concept. Another consideration was that most of thier costmers were of international backgrounds and typcally unfamiliar with the area.  Along with location issues, we had to account for the site's users would be international speaking.</p>
+
+                            <ol class="need-lst">
+                                <li>Requirments:</li>
+                                <li>Clean and lite site</li>
+                                <li>locating store easier</li>
+                                <li>multi language consumer</li>
+                            </ol>
                         </div>
 
                         <div class="img-gal">    
                             
                             <!-- // PRJ-SLD 1 -->
                             <div class="prj-sld  show-on-scroll text-fade-left"> 
-                                <img src="img/ZZ-HERO-CARD.jpg" alt=""> 
+                                <img src="img/ZZ-DESKTOP-MODEL.jpg" alt=""> 
                             </div>
 
                             <!-- // PRJ-SLD 2 -->
                             <div class="prj-sld  show-on-scroll text-fade-left"> 
                                 <div class="solu-text  ">
                                     <h3 class="show-on-scroll h3-title" >solution: </h3>
-                                    <p  class="show-on-scroll" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas impedit sapiente, dignissimos obcaecati quibusdam praesentium, deleniti necessitatibus veritatis, itaque animi culpa eligendi hic deserunt et exercitationem! Ipsa accusamus aut rem reprehenderit vel vitae, velit iure ex explicabo ullam enim inventore odit pariatur eveniet impedit eaque in a itaque accusantium ad.</p>
+                                    <p  class="show-on-scroll" >My proposal was to for the concept of the site was to use a light minimal design that would utilize vibrant colors, that had a mellow undertone. Employing images of farm, garden and vibrant produce would market the concept of from farm to table intention. </p>
+
+                             
+
                                 </div>
     
                             </div>
@@ -519,14 +528,16 @@
                             </div>
 
                             <!-- // PRJ-SLD 8 -->
-                            <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
-                                <img src="img/zz-mbl-cat-crd.jpg" alt="">
-                            </div> -->
+                            <div class="prj-sld  show-on-scroll text-fade-left">  
+                                <p  class="show-on-scroll" >To help ZZ's costomers find thier way around thier new suroundings, we utilized a google api to apply a map with markers of the store locations. To provide more options and ease of locating a store I also applied links to carry a user to google maps. 
+                                </p>
+                            </div>
 
                             <!-- // PRJ-SLD 9 -->
-                            <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
-                                <img src="img/zz-desk-img-2.jpg" alt="">
-                            </div> -->
+                            <div class="prj-sld  show-on-scroll text-fade-left">  
+                                
+                                <p  class="show-on-scroll" >In regards to the site being user friendly for all customers no matter thier lanuage of origin. I placed a google translater(LOOK UP OFFICIAL NAME!!!!!) at the head of the hero page so help more of ZZ's costmers of access to the information on the site.  </p>
+                            </div>
 
                             <!-- // PRJ-SLD 10 -->
                             <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
@@ -673,19 +684,19 @@
 
                             <!-- // PRJ-SLD 5 -->
                             <div class="prj-sld  show-on-scroll text-fade-left"> 
-                                <img src="img/ZZ-PHONE-MODEL (8).png" alt="">
+                                <img src="img/MOL-PHONE-MODEL-HM.png" alt="">
                             </div>
 
                             <!-- // PRJ-SLD 6 -->
                             <div class="prj-sld  show-on-scroll text-fade-left"> 
-                               <img src="img/zz-mbl-abt-crd-2.jpg" alt=""> 
+                               <img src="img/MOL-PHONE-MODEL-STR.png" alt=""> 
                             </div>
 
                             <!-- // PRJ-SLD 7 -->
+                           
                             <div class="prj-sld  show-on-scroll text-fade-left">  
-                                <img src="img/zz-mbl-cat-crd.jpg" alt="">
+                                <img src="img/MOL-PHONE-MODEL-CAT-SECT.png" alt="">
                             </div>
-
 
                     <!-- // PRJ-SLD 8 -->
                     <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
@@ -760,7 +771,9 @@
             <div class="wrk-over-cnt-head">
                 <div class="wrk-brand-name">
                     <a href="#main-hero"  onclick="workThreeCloseNav()">Shargene</a> 
-                </div>                    
+                </div>  
+                <div class="wrk-brand-sec-title"> <a href="#projects" onclick="workThreeCloseNav()">&#8592;  projects</a>
+                </div>                   
             </div>
 
             <div class="wrk-over-cont">
@@ -821,63 +834,62 @@
                             </div>
 
                         </div>
+  <!-- // PRJ-SLD 3 -->
+  <div class="prj-sld  show-on-scroll text-fade-left">  
+    <img src="img/ARCH-desktop-model-HM.jpg" alt=""> 
+</div>
 
-                        <!-- // PRJ-SLD 3 -->
-                        <div class="prj-sld  show-on-scroll text-fade-left">  
-                            <img src="img/ARCH-HERO-DSK-CRD-2.jpg" alt="">
-                        </div>
+<!-- // PRJ-SLD 4 -->
+<div class="prj-sld  show-on-scroll text-fade-left">  
+    <h2>Mobile</h2>
+</div>
 
-                        <!-- // PRJ-SLD 4 -->
-                        <div class="prj-sld  show-on-scroll text-fade-left">  
-                            <h2>Mobile</h2>
-                        </div>
+<!-- // PRJ-SLD 5 -->
+<div class="prj-sld  show-on-scroll text-fade-left"> 
+    <img src="img/ARCH-PHONE-MODEL-HM.png" alt="">
+</div>
 
-                        <!-- // PRJ-SLD 5 -->
-                        <div class="prj-sld  show-on-scroll text-fade-left"> 
-                            <img src="img/ARCH-MOB-FULL-SITE.jpg" alt="">
-                        </div>
+<!-- // PRJ-SLD 6 -->
+<div class="prj-sld  show-on-scroll text-fade-left"> 
+   <img src="img/ARCH-PHONE-MODEL-ABT-PG.png" alt=""> 
+</div>
 
-                        <!-- // PRJ-SLD 6 -->
-                        <div class="prj-sld  show-on-scroll text-fade-left"> 
-                            <img src="img/ARCH-COLOR-WIRE-2.png" alt=""> 
-                        </div>
-
-                        <!-- // PRJ-SLD 7 -->
-                        <div class="prj-sld  show-on-scroll text-fade-left">  
-                            <img src="img/ARCH-PRJ-ITEM-MBL-CARD.jpg" alt="">
-                        </div>
+<!-- // PRJ-SLD 7 -->
+<div class="prj-sld  show-on-scroll text-fade-left">  
+    <img src="img/ARCH-PHONE-MODEL-CAT.png" alt="">
+</div>
 
                         <!-- // PRJ-SLD 8 -->
                         <div class="prj-sld  show-on-scroll text-fade-left">  
-                            <img src="img/ARCH-PRJ-MBL-CARD.jpg" alt="">
+                            <img src="img/ARCH-FULL-DSK-SITE.jpg" alt="">
                         </div>
 
                         <!-- // PRJ-SLD 9 -->
-                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
                            
                             <img src="img/ARCH-FULL-DSK-SITE.jpg" alt=""> 
-                        </div>
+                        </div> -->
 
                         <!-- // PRJ-SLD 10 -->
-                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
                             <img src="img/arch-prj-dsk-full-site.jpg" alt=""> 
-                        </div>
+                        </div> -->
 
                             <!-- // PRJ-SLD 11 -->
-                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
                             <img src="img/ARCH-ABT-MBL-CARD.jpg" alt="">
-                        </div>
+                        </div> -->
 
                               <!-- // PRJ-SLD 12 -->
-                        <div class="prj-sld  show-on-scroll text-fade-left">  
+                        <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
                             <img src="img/ARCH-WIREFRAME-2.png" alt="">
-                        </div>  
+                        </div>   -->
 
                                  <!-- // PRJ-SLD 13 -->
-                          <div class="prj-sld  show-on-scroll text-fade-left">  
+                          <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
                             <img src="img/ARCH-INDEX-PRJ-CARD.jpg" alt="">
                         </div>
-                                                                        
+                                                                         -->
                     </div>
 
                     
@@ -935,7 +947,9 @@
         <div class="wrk-over-cnt-head">
             <div class="wrk-brand-name">
                 <a href="#main-hero"  onclick="workFourCloseNav()">Shargene</a> 
-            </div>                    
+            </div>     
+            <div class="wrk-brand-sec-title"> <a href="#projects" onclick="workFourCloseNav()">&#8592;  projects</a>
+            </div>                
         </div>
 
         <div class="wrk-over-cont">
@@ -997,55 +1011,55 @@
 
                     </div>
 
-                    <!-- // PRJ-SLD 3 -->
-                    <div class="prj-sld  show-on-scroll text-fade-left">  
-                        <img src="img/full-site-img-1.jpg" alt=""> 
-                    </div>
+              <!-- // PRJ-SLD 3 -->
+  <div class="prj-sld  show-on-scroll text-fade-left">  
+    <img src="img/AUTH-desktop-model.jpg" alt=""> 
+</div>
 
-                    <!-- // PRJ-SLD 4 -->
-                    <div class="prj-sld  show-on-scroll text-fade-left">  
-                        <h2>Mobile</h2>
-                    </div>
+<!-- // PRJ-SLD 4 -->
+<div class="prj-sld  show-on-scroll text-fade-left">  
+    <h2>Mobile</h2>
+</div>
 
-                    <!-- // PRJ-SLD 5 -->
-                    <div class="prj-sld  show-on-scroll text-fade-left"> 
-                        <img src="img/mobile-full-img-1.jpg" alt="">
-                    </div>
+<!-- // PRJ-SLD 5 -->
+<div class="prj-sld  show-on-scroll text-fade-left"> 
+    <img src="img/AUTH-PHONE-MODEL-AUTH.png" alt="">
+</div>
 
-                    <!-- // PRJ-SLD 6 -->
-                    <div class="prj-sld  show-on-scroll text-fade-left"> 
-                        <img src="img/ZANA-AUTH-CLR-WYR-2.png" alt=""> 
-                    </div>
+<!-- // PRJ-SLD 6 -->
+<div class="prj-sld  show-on-scroll text-fade-left"> 
+   <img src="img/ARCH-PHONE-MODEL-ABT-PG.png" alt=""> 
+</div>
 
-                    <!-- // PRJ-SLD 7 -->
-                    <div class="prj-sld  show-on-scroll text-fade-left">  
-                        <img src="img/apple-12-test-9.png" alt="">
-                    </div>
+<!-- // PRJ-SLD 7 -->
+<div class="prj-sld  show-on-scroll text-fade-left">  
+    <img src="img/ARCH-PHONE-MODEL-CAT.png" alt="">
+</div>
 
                     <!-- // PRJ-SLD 8 -->
-                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                    <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
                         <img src="img/apple-12-test-9.png" alt="">
-                    </div>
+                    </div> -->
 
                     <!-- // PRJ-SLD 9 -->
-                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                    <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
                         <img src="img/zz-desk-img-2.jpg" alt="">
-                    </div>
+                    </div> -->
 
                     <!-- // PRJ-SLD 10 -->
-                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                    <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
                         <img src="img/full-site-img-1.jpg" alt=""> 
-                    </div>
+                    </div> -->
 
                         <!-- // PRJ-SLD 11 -->
-                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                    <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
                         <img src="img/apple-12-test-9.png" alt="">
-                    </div>
+                    </div> -->
 
                         <!-- // PRJ-SLD 12 -->
-                    <div class="prj-sld  show-on-scroll text-fade-left">  
+                    <!-- <div class="prj-sld  show-on-scroll text-fade-left">  
                             <img src="img/ZANA-WIREFRAME-2.png" alt="">
-                    </div>  
+                    </div>   -->
                                                                     
                 </div>
 
@@ -1079,9 +1093,9 @@
 
         <section class="contact" id="contact-form">
             
-            <div class="cnt-dsk-title">
-                <h1>Contact</h1> 
-               </div>
+            <!-- <div > -->
+                <h1 class="cnt-title">contact</h1> 
+               <!-- </div> -->
 
             <img src="img/contact-image-8.png" alt="">
            
@@ -1091,25 +1105,25 @@
             <div class="container">
                 <form action="/action_page.php">
                     <div class="row">
-                        <div class="name-info">
+                        <!-- <div class="name-info">
                             <label for="fname">First Name</label>
-                        </div>
+                        </div> -->
                         <div class="col-75">
-                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                            <input type="text" id="fname" name="firstname" placeholder="First name . . .">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-25">
+                        <!-- <div class="col-25">
                             <label for="lname">Last Name</label>
-                        </div>
+                        </div> -->
                         <div class="col-75">
-                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                            <input type="text" id="lname" name="lastname" placeholder="Last name . . .">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-25">
+                        <!-- <div class="col-25">
                             <label for="country">Country</label>
-                        </div>
+                        </div> -->
                         <div class="col-75">
                             <select id="country" name="country">
                                 <option value="usa">USA</option>
@@ -1119,9 +1133,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-25">
+                        <!-- <div class="col-25">
                             <label for="subject">Subject</label>
-                        </div>
+                        </div> -->
                         <div class="col-75">
                             <textarea id="subject" name="subject" placeholder="Write something.."
                                 style="height:200px"></textarea>
@@ -1144,45 +1158,40 @@
                 <ul class="foot-link">
                     <li>
                         <!-- <a href="#abt">about</a> -->
-                        <div class="svg-wrapper">
-                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-                              <rect class="shape" height="60" width="320" />
-                              <div class="text"><a href="#abt">about</a></div>
-                            </svg>
+                        <div class="wrapper">
+                            <span class="square">
+                              <a class="first before after" href="#">home</a>
+                            </span>
                           </div>
                     </li>
                     <li>
-                        <div class="svg-wrapper">
-                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-                              <rect class="shape" height="60" width="320" />
-                              <div class="text"><a href="#abt">services</a></div>
-                            </svg>
+                        <div class="wrapper">
+                            <span class="square">
+                              <a class="first before after" href="#">about</a>
+                            </span>
                           </div>
                     </li>
                     <li>
-                        <div class="svg-wrapper">
-                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-                              <rect class="shape" height="60" width="320" />
-                              <div class="text"><a href="#abt">projects</a></div>
-                            </svg>
+                        <div class="wrapper">
+                            <span class="square">
+                              <a class="first before after" href="#">work</a>
+                            </span>
                           </div>
                     </li>
                     <li>
-                        <div class="svg-wrapper">
-                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-                              <rect class="shape" height="60" width="320" />
-                              <div class="text"><a href="#abt">testemonials</a></div>
-                            </svg>
+                        <div class="wrapper">
+                            <span class="square">
+                              <a class="first before after" href="#">contact</a>
+                            </span>
                           </div>
                     </li>
-                    <li>
-                        <div class="svg-wrapper">
-                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-                              <rect class="shape" height="60" width="320" />
-                              <div class="text"><a href="#abt">contact</a></div>
-                            </svg>
+                    <!-- <li>
+                        <div class="wrapper">
+                            <span class="square">
+                              <a class="first before after" href="#">Contact</a>
+                            </span>
                           </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 
