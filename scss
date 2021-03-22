@@ -4,11 +4,15 @@
     font-family: Proxima-Nova-Thin;
   }
 
+
+  // $font-header: 'Lato', sans-serif;
+
   $hero-tytl: 'Rock Salt', cursive;
   // $hero-tytl:  'Architects Daughter', cursive;
   $font-header: 'Poppins', sans-serif;
   // $font-header: "Proxima-Nova-Thin", sans-serif;
-  $para-text: 'Montserrat', Helvetica, sans-serif;
+  $para-text: 'Lato', sans-serif;
+  // $para-text: 'Montserrat', Helvetica, sans-serif;
   
   // $bck-color: #191919;
   // $bck-color: #274047;
@@ -604,11 +608,12 @@
   
   .nav-container h2 {
     ///////// Fix the fontsize issue !!! ///////
-    font-size: 2.7rem;
+    font-size: 5.4rem;
     font-weight: bold;
     text-transform: uppercase;
     color: $drk-color-2;
     margin: 1.5em 0;
+    font-family: $hero-tytl;
   }
   
   .nav-container img {
@@ -794,6 +799,11 @@
   
   .name-logo img {
     width: 3.6em;
+  }
+
+  .name-logo h1 {
+    font-family: $hero-tytl;
+    color: $second-color;
   }
   
   // .name-logo a {
@@ -1912,9 +1922,10 @@ margin: 0 1.5rem;
   // }
   .wrk-titl h1 {
     color: $fifth-color;
-    font-size: 7.2rem;
+    font-size: 4.5rem;
     text-align: center;
     font-family: $hero-tytl;
+    opacity: .1;
   }
   
   .prj-one,
@@ -2266,19 +2277,20 @@ margin: 0 1.5rem;
     text-align: left;
   }
 
-  .prj-info-lst li:nth-of-type(even){
-    font-size: 2.9rem;
-    text-transform: uppercase;
-  }
-  
-  .prj-info-lst li:nth-of-type(odd)
- {
-    color: $fifth-color;
-    // font-weight: 600;
+  .prj-info-lst li:nth-of-type(1){
     font-size: 1.8rem;
     text-transform: uppercase;
-    // line-height: 2.7rem;
+    color: $fifth-color;
   }
+  
+//   .prj-info-lst li:nth-of-type(odd)
+//  {
+//     color: $fifth-color;
+//     // font-weight: 600;
+//     font-size: 1.8rem;
+//     text-transform: uppercase;
+//     // line-height: 2.7rem;
+//   }
 
  .prj-smpl h3:nth-of-type(2){
 color: $prime-color;
@@ -2696,8 +2708,10 @@ text-align: left;
   
   .cnt-title {
     color: $fifth-color;
-    font-size: 7.2rem;
+    font-size: 4.5rem;
     text-align: center;
+    font-family: $hero-tytl;
+    opacity: .1;
   }
   
   .cnt-title input[type='text'],
@@ -3257,7 +3271,11 @@ text-align: left;
   justify-self: start;
 }
 
-
+.abt-dsk-para span {
+  font-family: $hero-tytl;
+  opacity: .72;
+  color: $second-color;
+}
 
 .h3-title-2  {
   grid-column: 1;
@@ -3313,7 +3331,7 @@ text-align: left;
       margin-right: -11em;
       grid-column: 1 / span 2;
       grid-row: 1 / span 2;
-      justify-self: end;
+      justify-self: center;
       align-self: start;
       z-index: 3;
       // writing-mode: vertical-rl;
@@ -3321,10 +3339,11 @@ text-align: left;
     }
   
     .wrk-titl h1 {
+      color: $fifth-color;
       text-transform: uppercase;
       margin: 0;
-      font-size: 18rem;
-      opacity: 0.05;
+      font-size: 6rem;
+      opacity: 0.1;
       z-index: 3;
     }
   
@@ -4022,7 +4041,7 @@ height: auto;
       margin: 0 12em;
       // height: 100vh;
       display: grid;
-      grid-template-columns: auto;
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;
     }
   
@@ -4034,7 +4053,7 @@ height: auto;
     }
   
     .cnt-title {
-      grid-column: 1 / span 2;
+      grid-column: 2;
       grid-row: 1;
       align-self: start;
       justify-self: start;
@@ -4044,8 +4063,9 @@ height: auto;
     .cnt-title {
       text-transform: uppercase;
       margin: 0;
-      font-size: 27rem;
-      opacity: 0.05;
+      font-size: 6rem;
+      opacity: 0.1;
+     
     }
   
     .contact .container {
