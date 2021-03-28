@@ -1651,7 +1651,8 @@ text-align: left;
 
 .prj-sld:nth-of-type(1) img,
 .prj-sld:nth-of-type(3) img,
-.prj-sld:nth-of-type(8) img {
+.prj-sld:nth-of-type(8) img,
+.prj-sld:nth-of-type(10) img {
   box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.7),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.2);
 }
@@ -2483,14 +2484,17 @@ grid-row: 7;
     align-self: start;
     justify-self: center;
     text-align: left;
+    // margin: 0;
   }
 
   .dsk-prj-over-info p {
     color: $para-color;
+    // color: red;
     font-size: 1.8rem;
     text-align: left;
     font-weight: 400;
     font-style: italic;
+    margin: 0;
   }
 
   .dsk-vst-syt {
@@ -2633,8 +2637,9 @@ height: auto;
     justify-self: center;
   }
   #prjTwo .prj-sld:nth-of-type(3) {
-    grid-column: 2;
-    grid-row: 3;
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: start;
     
   }
 
@@ -2643,7 +2648,7 @@ height: auto;
   .prj-sld:nth-of-type(4) {
     grid-column: 2;
     grid-row: 3;
-    align-self: center;
+    align-self: end;
     justify-self: center;
   }
 
@@ -2653,12 +2658,12 @@ height: auto;
     justify-self: center;
   }
 
-  #prjThree .prj-sld:nth-of-type(4) {
-    grid-column: 2 / span 2;
-    grid-row: 3;
-    align-self: end;
-    justify-self: center;
-  }
+  // #prjThree .prj-sld:nth-of-type(4) {
+  //   grid-column: 2;
+  //   grid-row: 3;
+  //   align-self: end;
+  //   justify-self: center;
+  // }
 
   .prj-sld:nth-of-type(4) h2 {
     font-size: 9rem;
@@ -2713,6 +2718,12 @@ height: auto;
     justify-self: center;
   }
 
+  .prj-sld:nth-of-type(8) {
+    grid-column: 3;
+    grid-row: 4;
+    align-self: end;
+    justify-self: center;
+  }
 
   #prjOne .prj-sld:nth-of-type(8) {
     grid-column: 1;
@@ -2722,6 +2733,23 @@ height: auto;
     margin: 0 1em;
   }
 
+  #prjTwo .prj-sld:nth-of-type(8) {
+    grid-column: 1/ span 2;
+    grid-row: 2;
+    padding-right: 3rem;
+  }
+
+  #prjThree .prj-sld:nth-of-type(8) {
+grid-column: 2;
+grid-row: 2;
+justify-self: center;
+  }
+
+  // #prjThree .prj-sld:nth-of-type(8) img {
+  //  width: 50%;
+  // }
+
+
   #prjOne .prj-sld:nth-of-type(9) {
     grid-column: 2;
     grid-row: 2;
@@ -2730,12 +2758,19 @@ height: auto;
     margin: 0 1em;
   }
 
-  .prj-sld:nth-of-type(8) {
-    grid-column: 3;
-    grid-row: 4;
-    align-self: end;
-    justify-self: center;
+  #prjTwo .prj-sld:nth-of-type(9) {
+    grid-column: 2/ span 2;
+    grid-row: 3;
+    padding-left: 3rem;
   }
+
+  #prjTwo .prj-sld:nth-of-type(10) {
+    grid-column: 1;
+    grid-row: 3;
+
+  }
+
+
 
 
   .solu-text {
