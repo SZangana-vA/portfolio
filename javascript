@@ -1,5 +1,15 @@
 'use strict';
 
+
+// PRE-LOADER --------------------------------- //
+
+window.addEventListener("load", function() {
+  const loader = document.querySelector(".loader");
+  loader.classList.add('preload-finish'); 
+ 
+})
+
+
 // SMOOTH SCROLLING --------------------------------- //
 
 //add smooth scrolling when clicking any anchor link
@@ -11,7 +21,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
-//<a href="#someOtherElementID"> Go to Other Element Smoothly </a>
+
+
+
+// CURSOR --------------------------------- //
+
+let mouseCursor = document.querySelector('.cursor');
+let navLinks = document.querySelectorAll('.a-lnk');
+
+window.addEventListener('mousemove', cursor);
+
+function cursor(e) {
+    mouseCursor.style.top = e.pageY + 'px';
+    mouseCursor.style.left = e.pageX + 'px';
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('mouseleave', () => {
+        mouseCursor.classList.remove('link-grow');
+        link.classList.remove('hovered-link');
+    })
+
+    link.addEventListener('mouseover', () => {
+        mouseCursor.classList.add('link-grow');
+        link.classList.add('hovered-link');
+    })
+});
+
+
 
 // NAV OFF-CAMPUS
 
@@ -31,8 +68,8 @@ function toggleNavigation(event) {
 document.addEventListener('DOMContentLoaded', function (event) {
   // array with texts to type in typewriter
   var dataText = [
+    'creative developer.',
     'frontend developer.',
-    'designer.',
     'creator.',
     'father.',
     'musician.',
@@ -80,6 +117,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
   StartTextAnimation(0);
 });
 
+
+
 // ELEMENT REVEAL --------------------------------------------------- //
 
 // Detect request animation frame
@@ -125,7 +164,29 @@ function isElementInViewport(el) {
   );
 }
 
-// ABOUT
+
+// function showNav(id, show) {
+//   document.getElementById(id).style.width = show ? "100%" : "0%";
+// }
+
+
+// showNav("prjOne", true);
+// showNav("prjOne", false);
+
+// showNav("prjTwo", true);
+// showNav("prjTwo", false);
+
+// showNav("prjThree", true);
+// showNav("prjThree", false);
+
+// showNav("prjFour", true);
+// showNav("prjFour", false);
+
+// showNav("abtNav", true)
+// showNav("abtNav", false)
+
+
+// ABOUT --------------------------------------------------- //
 
 function abtOpenNav() {
   document.getElementById('abtNav').style.width = '100%';
@@ -135,18 +196,9 @@ function abtCloseNav() {
   document.getElementById('abtNav').style.width = '0%';
 }
 
-// services
 
-function servOpenNav() {
-  document.getElementById('servNav').style.width = '100%';
-}
-
-function servCloseNav() {
-  document.getElementById('servNav').style.width = '0%';
-}
-
-// work
-// prj 1
+// PROJECTS --------------------------------------------------- //
+//  PRJ 1
 function workOpenNav() {
   document.getElementById('prjOne').style.width = '100%';
 }
@@ -155,7 +207,7 @@ function workCloseNav() {
   document.getElementById('prjOne').style.width = '0%';
 }
 
-// prj 2
+// // // prj 2
 function workTwoOpenNav() {
   document.getElementById('prjTwo').style.width = '100%';
 }
@@ -164,7 +216,7 @@ function workTwoCloseNav() {
   document.getElementById('prjTwo').style.width = '0%';
 }
 
-// prj 3
+// // // prj 3
 function workThreeOpenNav() {
   document.getElementById('prjThree').style.width = '100%';
 }
@@ -173,7 +225,7 @@ function workThreeCloseNav() {
   document.getElementById('prjThree').style.width = '0%';
 }
 
-// prj 4
+// // // prj 4
 function workFourOpenNav() {
   document.getElementById('prjFour').style.width = '100%';
 }
@@ -182,15 +234,79 @@ function workFourCloseNav() {
   document.getElementById('prjFour').style.width = '0%';
 }
 
-// document.getElementById("workNav").addEventListener('click', workOpenNav);
 
-// function workOpenNav() {
-//   document.getElementById("workNav").style.width = "100%";
 
-// }
+// TEXT FADE-IN --------------------------------------------------- //
 
-// function workCloseNav() {
-//   document.getElementById("workNav").style.width = "0%";
-// }
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyC8CbbfEIZ5Z9Kw_P-qt2GmxTvaVJFgnLU",
+    authDomain: "shargene-zangana.firebaseapp.com",
+    projectId: "shargene-zangana",
+    storageBucket: "shargene-zangana.appspot.com",
+    messagingSenderId: "832427855365",
+    appId: "1:832427855365:web:98cc046c56b7212c61166c",
+    measurementId: "G-BGXWZ4ES2E"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // firebase.analytics();
 
-// TEXT FADE-IN --------------------------//
+
+  // Reference messages collection 
+  let messagesRef = firebase.database().ref('messages');
+
+// Listen for form submit
+document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+// Submit Form
+
+function submitForm(e) {
+  e.preventDefault();
+ 
+  //Get Values
+  let fname = getInputVal('fname');
+  let lname = getInputVal('lname');
+  let phone = getInputVal('phone');
+  let email = getInputVal('email');
+  let country = getInputVal('country');
+  let subject = getInputVal('subject');
+
+  // Save message
+  saveMessage(fname, lname, phone, email, country, subject);
+
+  // document.getElementById('contactForm').requestFullscreen()
+  
+  // Show Alert
+  document.querySelector('.alert').style.display = 'block';
+
+  // Hide Alert After 3 Seconds
+  setTimeout(function() {
+    document.querySelector('.alert').style.display = 'none';
+  }, 3000);
+
+  // CLear Form
+
+  document.getElementById('contactForm').reset();
+}
+
+// Funcion to get form values
+function getInputVal(id) {
+  return document.getElementById(id).value;
+}
+
+// Save message to Firebase
+function saveMessage(fname, lname, phone, email, country, subject) {
+  let newMessageRef = messagesRef.push();
+  newMessageRef.set({
+    fname: fname,
+    lname: lname,
+    phone: phone,
+    email: email,
+    country: country,
+    subject: subject
+  });
+}
+
+
