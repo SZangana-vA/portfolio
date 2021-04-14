@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     'father.',
     'musician.',
     'soccer fan.',
-    "punching bag for my kid's.",
+    "architectural enthusiast."
   ];
 
   // type one text in the typwriter
